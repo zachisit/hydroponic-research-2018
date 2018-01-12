@@ -32,7 +32,8 @@ add_action( 'widgets_init', 'hr_widgets_init' );
  */
 register_nav_menus( [
     'header_menu' => 'Header Main Navigation Menu',
-    'footer_menu' => 'Footer Main Navigation Menu',
+    'footer_menu_one' => 'Footer Menu One',
+    'footer_menu_two' => 'Footer Menu Two',
 ] );
 
 /**
@@ -49,7 +50,7 @@ function hr_scripts()
 
     //js
     wp_enqueue_script( 'preload_directory', get_template_directory_uri() . '/js/preload_directory.js',  time() );
-    //wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/966d4a5f64.js', time() );
+    wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/966d4a5f64.js', time() );
     wp_enqueue_script( 'mobile-menu', get_template_directory_uri() . '/js/mobile_menu.js', time(), true );
     wp_enqueue_script( 'videoWrapper', get_template_directory_uri() . '/js/videoWrapper.js',  time() );
     wp_enqueue_script( 'smooth_scroll', get_template_directory_uri() . '/js/smooth_scroll.js',  time() );
@@ -378,12 +379,10 @@ function checkPluginsRequired() {
         $plugin_messages[] = 'The '.$this_theme_name.' v.'.$this_theme_version.' theme requires you to install the WP-SCSS plugin - <a href="https://wordpress.org/plugins/wp-scss/" title="Download the required plugin here" target="_blank">download it from here</a> or activate if currently installed.';
     }
 
-    /*further plugins would be written in the following format
     //WooCommerce Plugin
     if(!is_plugin_active( 'woocommerce/woocommerce.php' ))	{
         $plugin_messages[] = 'The '.$this_theme_name.' v.'.$this_theme_version.' theme requires you to install the WooCommerce plugin - <a href="https://wordpress.org/plugins/woocommerce/" title="Download the required plugin here" target="_blank">download it from here</a> or activate if currently installed.';
     }
-    */
 
     if(count($plugin_messages) > 0)	{
         echo '<div id="message" class="error">';

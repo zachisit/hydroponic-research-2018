@@ -1,4 +1,4 @@
-# Hydroponic Research Wordpress Theme
+# Hydroponic Research WordPress Theme
 
 ## Table of Contents
 - [Author](#author)
@@ -36,7 +36,7 @@
 
 ## Theme Plugins
 * [WP-SCSS](https://wordpress.org/plugins/wp-scss/) - allows server compiling of SASS file.
-* TODO
+* [WooCommerce](https://wordpress.org/plugins/woocommerce/) - for the ecommerce platform.
 
 ## WordPress Version
 * At time of last update, this theme was built and tested with WordPress version 4.9.1.
