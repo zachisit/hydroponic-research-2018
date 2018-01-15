@@ -36,6 +36,7 @@
     </div>
 </footer>
 <?php wp_footer(); ?>
+<?=get_post_meta( get_the_ID(), 'body_scripts', true );//refer to /page_edit/page_scripts.php?>
 
 <!--Google Analytics-->
     <!--remove me and replace with client GA code-->

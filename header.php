@@ -32,6 +32,7 @@
     <meta name="twitter:description" content="Content description less than 200 characters">
     <meta name="twitter:image" content="https://example.com/image.jpg">
     <?php wp_head(); ?>
+    <?=get_post_meta( get_the_ID(), 'header_scripts', true ); //refer to /page_edit/page_scripts.php?>
 </head>
 <body>
 
