@@ -40,10 +40,6 @@ $pinterest_brand_color:#bd081c;
 /*--------------------------------------------------------------
 # Mixins
 --------------------------------------------------------------*/
-$mobile_phone_size:"only screen and (max-width:430px)";//to be depreciated; use mixins below
-$table_size:"only screen and (min-width:430px) and (max-width:880px)";//to be depreciated; use mixins below
-$medium_desktop_size:"only screen and (min-width:881px) and (max-width:1300px)";//to be depreciated; use mixins below
-
 @mixin bp-large {
   @media only screen and (max-width: 60em) {
     @content;
@@ -86,6 +82,9 @@ $medium_desktop_size:"only screen and (min-width:881px) and (max-width:1300px)";
     padding:0;
     margin:0;
   }
+}
+@mixin ul-no-list-style {
+  list-style-type:none;
 }
 @mixin keyframes($animation-name) {
   @-webkit-keyframes #{$animation-name} {
@@ -209,14 +208,53 @@ a {
 .mobile_only {
   display:none;
 
-  @media #{$mobile_phone_size} {
+  @include bp-small {
     display:block;
   }
+}
+
+.row {
+  @include image_responsive;
+  float:left;
+  width:100%;
+}
+
+.left {
+  float:left;
+}
+
+.right {
+  float:right;
 }
 
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+header {
+  float:left;
+  width:100%;
+  padding:2em 0;
+
+  #logo {
+    width:auto;
+    float:left;
+  }
+
+  #menu {
+    float:right;
+
+    ul {
+      @include ul-no-list-style;
+      margin:1em 0 0 0;
+
+      li {
+        @include ul-li-last-item-no-margin;
+        margin:0 1em 0 0;
+        float:left;
+      }
+    }
+  }
+}
 
 /*--------------------------------------------------------------
 # Menu - Desktop and Mobile
@@ -240,7 +278,7 @@ a {
     color:$error_red;
   }
 
-  @media #{$mobile_phone_size} {
+  @include bp-small {
     display:block;
   }
 }
@@ -264,7 +302,7 @@ a {
     float:left;
   }
 
-  @media #{$mobile_phone_size} {
+  @include bp-small {
     display:block;
   }
 }
@@ -275,7 +313,7 @@ a {
   clear:both;
   margin:-1em 0 0 0;//@TODO:not most elegant;fix later
 
-  @media #{$mobile_phone_size} {
+  @include bp-small {
     background:$error_red;
     width:100%;
     height:576px;
@@ -324,7 +362,7 @@ a {
       width:200px;
       z-index:2;
 
-      @media #{$mobile_phone_size} {
+      @include bp-small {
         background:none;
         position:relative;
         border-top:1px solid #ccc;
@@ -342,7 +380,7 @@ a {
         width:95%;
         border-bottom:1px solid white;
 
-        @media #{$mobile_phone_size} {
+        @include bp-small {
           width:100%;
           border:none;
           padding:0;
@@ -365,6 +403,79 @@ a {
 /*--------------------------------------------------------------
 # Home Page Specific
 --------------------------------------------------------------*/
+#product_banner {
+  @include image_responsive;
+  float:left;
+  width:100%;
+  position:relative;
+
+  #cta_headline {
+    bottom:3em;
+    width:80%;
+    margin:auto;
+    position:absolute;
+    right:0;
+    left:0;
+
+    h2 {
+      color:white;
+      font-size:2em;
+      text-align:center;
+      margin:0;
+      padding:0;
+    }
+  }
+}
+
+#under_header_two_boxes {
+
+  .left, .right {
+    width:49.9%;
+    //position:absolute;
+  }
+}
+
+#home_slider {
+  float:left;
+  width:100%;
+
+  ul {
+    @include ul-no-list-style;
+
+    li {
+      @include image_responsive;
+      width:300px;
+      float:left;
+      margin:0 1em 0 0;
+    }
+  }
+}
+
+.button_block {
+  float:none;
+  width:140px;
+  right:0;
+  left:0;
+  margin:auto;
+  position:relative;
+  bottom:16em;
+
+}
+
+.home_button { //@TODO:at some point move this into globalized
+  @include border-radius(1em);
+  color:white;
+  font-size:1em;
+  text-align:center;
+  border:0.111em solid white;
+  padding:0.5em 1em;
+
+  &:hover {
+    @include transition(background 800ms ease);
+    background:white;
+    color:#333;
+  }
+}
 
 /*--------------------------------------------------------------
 # Content
@@ -382,7 +493,7 @@ a {
   float:left;
   margin-right:1.5em;
 
-  @media #{$mobile_phone_size} {
+  @include bp-small {
     width:100%;
     height:auto;
     margin:0;
@@ -394,7 +505,7 @@ a {
   float:right;
   margin-left:1.5em;
 
-  @media #{$mobile_phone_size} {
+  @include bp-small {
     width:100%;
     height:auto;
     float:left;
@@ -408,7 +519,7 @@ a {
   margin-left:auto;
   margin-right:auto;
 
-  @media #{$mobile_phone_size} {
+  @include bp-small {
     width:100%;
     height:auto;
   }
@@ -454,11 +565,11 @@ video {
     right:7.5%;
     margin:0 0 1.250em 0;
 
-    @media #{$mobile_phone_size} {
+    @include bp-small {
       right:1%;
     }
 
-    @media #{$table_size} {
+    @include bp-medium {
       right:1%;
     }
 
@@ -498,5 +609,97 @@ footer {
   float:left;
   width:100%;
   padding:1.510em 0 0 0;
-  margin:0;
+  margin:2em 0 0 0;
+  border-top:0.11em solid #ccc;
+
+  #top {
+    margin:0 0 4em 0;
+
+    #newsletter {
+      width:300px;
+      height:34px;
+      background:white;
+      margin:auto;
+      border:0.11em solid #ccc;
+      padding:0.5em;
+
+      #submit {
+        float:left;
+        width:50px;
+        height:32px;
+      }
+
+      #text {
+        float:right;
+        width:230px;
+        padding:0.3em;
+        font-size:1em;
+      }
+    }
+  }
+
+  .left, .right {
+    width:50%;
+
+    h2 {
+      font-size:1em;
+      color:#333;
+      text-transform:uppercase;
+      margin:0 0 0.8em 0;
+      padding:0;
+    }
+
+    ul {
+      @include ul-no-list-style;
+
+      li {
+
+        a {
+          color:#333;
+          font-size:0.9em;
+        }
+      }
+    }
+  }
+
+  .logo_social {
+    float:right;
+
+    #logo {
+      float:right;
+    }
+
+    #social {
+      @include ul-no-list-style;
+      width:155px;
+      margin:auto;
+
+      li {
+        @include ul-li-last-item-no-margin;
+        display:inline-block;
+        margin:0 0.5em 0 0;
+
+        a {
+          font-size:2em;
+          color:#333;
+        }
+      }
+    }
+  }
+
+  #bottom {
+    width:100%;
+    float:left;
+    margin:3em 0 1em 0;
+
+    p {
+      text-align:center;
+      font-size:0.8em;
+      color:#333;
+
+      a {
+        color:#333;
+      }
+    }
+  }
 }

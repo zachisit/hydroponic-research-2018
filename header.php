@@ -37,21 +37,25 @@
 
 <header>
     <div class="wrapper">
-        <div id="logo">
-            <a href="<?=get_home_url(); ?>" title="<?=get_home_url(); ?> Home"><?=image_creator('https://dummyimage.com/300x80/9c9c9c/fff.png&text=logo', 'logo', null)?></a>
-        </div>
-        <button id="menu_btn"></button>
-        <div id="menu">
-            <button id="menu_close"></button>
-            <div id="search_mobile">
-                <?php get_search_form(); ?>
+        <div class="left">
+            <div id="logo">
+                <a href="<?=get_home_url(); ?>" title="<?=get_home_url(); ?> Home"><?=image_creator('https://dummyimage.com/300x80/9c9c9c/fff.png&text=logo', 'logo', null)?></a>
             </div>
-            <ul>
-                <li><a href="<?=home_url('/shop')?>" title="Go To Shop"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=shop', 'shop icon', null)?></a></li>
-                <li><a href="<?=home_url('/grow_notes')?>" title="Go To Grow Notes"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=notes', 'grow notes icon', null)?></a></li>
-                <li><a href="<?=home_url('/login')?>" title="Go To Member Login"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=login', 'member login icon', null)?></a></li>
-                <li><a href="<?=home_url('/contact')?>" title="Go To Contact Us"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=contact', 'contact icon', null)?></a></li>
-            </ul>
+        </div>
+        <div class="right">
+            <button id="menu_btn"></button>
+            <div id="menu">
+                <button id="menu_close"></button>
+                <div id="search_mobile">
+                    <?php get_search_form(); ?>
+                </div>
+                <ul>
+                    <li><a href="<?=home_url('/shop')?>" title="Go To Shop"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=shop', 'shop icon', null)?></a></li>
+                    <li><a href="<?=home_url('/grow_notes')?>" title="Go To Grow Notes"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=notes', 'grow notes icon', null)?></a></li>
+                    <li><a href="<?=home_url('/login')?>" title="Go To Member Login"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=login', 'member login icon', null)?></a></li>
+                    <li><a href="<?=home_url('/contact')?>" title="Go To Contact Us"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=contact', 'contact icon', null)?></a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </header>

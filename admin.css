@@ -1,0 +1,124 @@
+/*--------------------------------------------------------------
+ >>> TABLE OF CONTENTS:
+ ----------------------------------------------------------------
+ # Client Brand Colors
+ # Further Reading
+ # Admin UX
+ # CPT Meta Box Stylings
+ # Responsive Video Wrappers
+ --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+ # Client Brand Colors
+ --------------------------------------------------------------*/
+body, html {
+  /*--------------------------------------------------------------
+   # Further Reading
+   --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+   # Admin UX
+   --------------------------------------------------------------*/
+}
+body .wp-heading-inline, html .wp-heading-inline {
+  color: #ca7938;
+}
+body a, html a {
+  color: #3f5a72;
+}
+body .further-reading-widget, html .further-reading-widget {
+  margin: 0.5em 0;
+}
+body .further-reading-widget:not(:first-of-type), html .further-reading-widget:not(:first-of-type) {
+  margin-top: 1.5em;
+  border-top: solid thin black;
+}
+body .meta-box-sortables, html .meta-box-sortables {
+  /*--------------------------------------------------------------
+   # CPT Meta Box Stylings
+   --------------------------------------------------------------*/
+}
+body .meta-box-sortables h2.hndle, html .meta-box-sortables h2.hndle {
+  color: #3f5a72;
+  font-weight: 500;
+  border-bottom: 1px solid #3f5a72;
+  text-shadow: none;
+  font-size: 1.2em !important;
+}
+body .meta-box-sortables .metabox, html .meta-box-sortables .metabox {
+  padding: 0 0 2em 0;
+  /*--------------------------------------------------------------
+   # Responsive Video Wrapper
+   --------------------------------------------------------------*/
+}
+body .meta-box-sortables .metabox label, html .meta-box-sortables .metabox label {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin: 2em 0 0.5em 0;
+  color: #ca7938;
+}
+body .meta-box-sortables .metabox label:first-child, html .meta-box-sortables .metabox label:first-child {
+  margin: 2em 0 0 0;
+}
+body .meta-box-sortables .metabox input, html .meta-box-sortables .metabox input {
+  margin: 0;
+  display: block;
+}
+body .meta-box-sortables .metabox input[type=checkbox], html .meta-box-sortables .metabox input[type=checkbox] {
+  margin: 0 1em 0 0;
+  padding: 0;
+  display: inline-block !important;
+}
+body .meta-box-sortables .metabox .subtitle_italic, html .meta-box-sortables .metabox .subtitle_italic {
+  display: block;
+  font-size: 1em;
+  margin: 0.5em 0;
+  font-style: italic;
+}
+body .meta-box-sortables .metabox .required:after, html .meta-box-sortables .metabox .required:after {
+  content: "*";
+  font-size: 1em;
+  color: red;
+  font-weight: 900;
+  padding: 0 0 0 0.5em;
+}
+body .meta-box-sortables .metabox #required_explainer, html .meta-box-sortables .metabox #required_explainer {
+  display: block;
+}
+body .meta-box-sortables .metabox #required_explainer:before, html .meta-box-sortables .metabox #required_explainer:before {
+  content: "*";
+  font-size: 1em;
+  color: red;
+  font-weight: 900;
+  padding: 0 0.5em 0 0;
+}
+body .meta-box-sortables .metabox .iframe, html .meta-box-sortables .metabox .iframe {
+  margin: 0 0 1em 0;
+  display: block;
+}
+body .meta-box-sortables .metabox .button, html .meta-box-sortables .metabox .button {
+  background: #0085ba;
+  border-color: #0073aa #006799 #006799;
+  -webkit-box-shadow: 0 1px 0 #006799;
+  box-shadow: 0 1px 0 #006799;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
+  height: 30px;
+  line-height: 28px;
+  padding: 0 12px 2px;
+}
+body .meta-box-sortables .metabox .videoWrapper, html .meta-box-sortables .metabox .videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  /* 16:9 */
+  height: 0;
+  margin: 0 0 1em 0;
+}
+body .meta-box-sortables .metabox .videoWrapper iframe, html .meta-box-sortables .metabox .videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
