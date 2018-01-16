@@ -143,6 +143,9 @@ header #menu ul li:last-child {
   padding: 0;
   margin: 0;
 }
+header#internal {
+  border-bottom: 0.022em solid #ccc;
+}
 /*--------------------------------------------------------------
  # Menu - Desktop and Mobile
  --------------------------------------------------------------*/
@@ -344,9 +347,61 @@ header #menu ul li:last-child {
 /*--------------------------------------------------------------
  # Content
  --------------------------------------------------------------*/
+#content_left {
+  float: left;
+  width: 70%;
+}
+#full_width {
+  width: 100%;
+  float: left;
+}
+#full_width #main_page_headline {
+  text-align: center;
+  font-size: 2.1em;
+  margin: 2em 0 2.5em 0;
+  padding: 0;
+}
+#full_width .product_category_landing_list_style {
+  list-style-type: none;
+}
+#full_width .product_category_landing_list_style li {
+  display: inline-block;
+  margin: 0 1em 4em 0;
+  width: 30%;
+}
+#full_width .product_category_landing_list_style li .product_item {
+  text-align: center;
+}
+#full_width .product_category_landing_list_style li .product_item a {
+  color: #333;
+}
+#full_width .product_category_landing_list_style li .product_item a .thumbnail:hover {
+  -webkit-transition: opacity 800ms ease;
+  -moz-transition: opacity 800ms ease;
+  -ms-transition: opacity 800ms ease;
+  -o-transition: opacity 800ms ease;
+  transition: opacity 800ms ease;
+  opacity: 0.7;
+}
+#full_width .product_category_landing_list_style li:nth-child(3n+3) {
+  margin: 0;
+}
+#full_width #product_call_to_action {
+  float: left;
+  width: 100%;
+  margin: 2em 0;
+}
+#full_width #product_call_to_action img {
+  width: 100%;
+  height: auto;
+}
 /*--------------------------------------------------------------
  # Sidebar
  --------------------------------------------------------------*/
+#sidebar {
+  float: right;
+  width: 25%;
+}
 /*--------------------------------------------------------------
  # Alignments
  --------------------------------------------------------------*/

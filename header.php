@@ -36,7 +36,7 @@
 </head>
 <body>
 
-<header>
+<header<?=(!is_home()) ? ' id="internal"' : ''?>>
     <div class="wrapper">
         <div class="left">
             <div id="logo">
@@ -50,12 +50,14 @@
                 <div id="search_mobile">
                     <?php get_search_form(); ?>
                 </div>
-                <ul>
-                    <li><a href="<?=home_url('/shop')?>" title="Go To Shop"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=shop', 'shop icon', null)?></a></li>
-                    <li><a href="<?=home_url('/grow_notes')?>" title="Go To Grow Notes"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=notes', 'grow notes icon', null)?></a></li>
-                    <li><a href="<?=home_url('/login')?>" title="Go To Member Login"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=login', 'member login icon', null)?></a></li>
-                    <li><a href="<?=home_url('/contact')?>" title="Go To Contact Us"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=contact', 'contact icon', null)?></a></li>
-                </ul>
+                <nav>
+                    <ul>
+                        <li><a href="<?=home_url('/shop')?>" title="Go To Shop"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=shop', 'shop icon', null)?></a></li>
+                        <li><a href="<?=home_url('/grow_notes')?>" title="Go To Grow Notes"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=notes', 'grow notes icon', null)?></a></li>
+                        <li><a href="<?=home_url('/login')?>" title="Go To Member Login"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=login', 'member login icon', null)?></a></li>
+                        <li><a href="<?=home_url('/contact')?>" title="Go To Contact Us"><?=image_creator('https://dummyimage.com/80x80/9c9c9c/fff.png&text=contact', 'contact icon', null)?></a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>

@@ -6,6 +6,7 @@
  */
 
 require_once "shortcodes/sitemap.php";
+require_once "shortcodes/products_by_cat.php";
 require_once "woocommerce/woocommerce_functions.php";
 require_once "page_edit/page_scripts.php";
 require_once "page_edit/page_show_sidebar.php";
