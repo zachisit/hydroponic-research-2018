@@ -1,6 +1,8 @@
 <?php
 /**
  * WooCommerce specific
+ *
+ * @package hydroponic-research
  */
 
 /*

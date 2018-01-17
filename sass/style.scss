@@ -8,6 +8,7 @@
 # Header
 # Menu - Deskop and Mobile
 # Home Page Specific
+# User Profile
 # Content
 # - Contact Page
 # - Online Education Plugin
@@ -153,6 +154,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
+  color:blue;
   outline:none;
   text-decoration:none;
 }
@@ -478,6 +480,102 @@ header {
     @include transition(background 800ms ease);
     background:white;
     color:#333;
+  }
+}
+
+/*--------------------------------------------------------------
+# User Profile
+---------------------------------------------------------------*/
+#profile {
+  display:block;
+  margin:3em 0 0 0;
+
+  #edit_profile {
+    display:block;
+    width:100%;
+    margin:1em 0 0 0;
+
+    a {
+      @include font-awesome-declaration('before','\f040',1em,0 0.4em 0 0,black,null );
+      font-size:1em;
+    }
+  }
+
+  .left {
+    width:30%;
+
+    #profile_image {
+      @include image_responsive;
+      margin:0 0 1em 0;
+    }
+
+    #profile_name {
+      font-size:1.8em;
+      font-weight:500;
+      margin:0 0 0.2em 0;
+    }
+
+    #profile_location {
+      font-size:0.91em;
+      font-style:italic;
+      margin:0 0 0.999em 0;
+    }
+
+    #profile_category {
+      @include ul-no-list-style;
+
+      li {
+        @include font-awesome-declaration('after', ', ', 1em, 0 0.22em 0 0, black, null );
+        display:inline-block;
+        width:auto;
+      }
+    }
+  }
+
+  .right {
+    width:60%;
+
+    section {
+      margin:0 0 3em 0;
+
+      .section_title {
+        padding:0.5em 0;
+        margin:0 0 0.5em 0;
+        background:black;
+
+        .title {
+          font-size:1.2em;
+          color:white;
+          padding:0 0 0 0.5em;
+          text-align:left;
+        }
+      }
+
+      .content {
+        display:block;
+        margin:auto;
+        width:95%;
+      }
+
+      #gallery_items {
+        @include ul-no-list-style;
+
+        li {
+          @include image_responsive;
+          width:23%;
+          margin:0 0.5em 1em 0;
+          display:inline-block;
+        }
+      }
+
+      #change_this_ul_name_later {
+        margin:0 0 0 1em;
+
+        li {
+          margin:0 0 0.4em 0;
+        }
+      }
+    }
   }
 }
 

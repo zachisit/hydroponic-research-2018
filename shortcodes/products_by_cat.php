@@ -3,6 +3,8 @@
  * WooCommerce Product Category
  *
  * outputs products based on category piped in
+ *
+ * @package hydroponic-research
  */
 
 function hr_product_category_list($atts) {

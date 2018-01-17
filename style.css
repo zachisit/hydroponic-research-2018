@@ -8,6 +8,7 @@
  # Header
  # Menu - Deskop and Mobile
  # Home Page Specific
+ # User Profile
  # Content
  # - Contact Page
  # - Online Education Plugin
@@ -48,6 +49,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 a {
+  color: blue;
   outline: none;
   text-decoration: none;
 }
@@ -343,6 +345,102 @@ header#internal {
   transition: background 800ms ease;
   background: white;
   color: #333;
+}
+/*--------------------------------------------------------------
+ # User Profile
+ ---------------------------------------------------------------*/
+#profile {
+  display: block;
+  margin: 3em 0 0 0;
+}
+#profile #edit_profile {
+  display: block;
+  width: 100%;
+  margin: 1em 0 0 0;
+}
+#profile #edit_profile a {
+  font-size: 1em;
+}
+#profile #edit_profile a:before {
+  content: '\f040';
+  font-family: "FontAwesome";
+  font-size: 1em;
+  color: black;
+  margin: 0 0.4em 0 0;
+}
+#profile .left {
+  width: 30%;
+}
+#profile .left #profile_image {
+  margin: 0 0 1em 0;
+}
+#profile .left #profile_image img {
+  width: 100%;
+  height: auto;
+}
+#profile .left #profile_name {
+  font-size: 1.8em;
+  font-weight: 500;
+  margin: 0 0 0.2em 0;
+}
+#profile .left #profile_location {
+  font-size: 0.91em;
+  font-style: italic;
+  margin: 0 0 0.999em 0;
+}
+#profile .left #profile_category {
+  list-style-type: none;
+}
+#profile .left #profile_category li {
+  display: inline-block;
+  width: auto;
+}
+#profile .left #profile_category li:after {
+  content: ', ';
+  font-family: "FontAwesome";
+  font-size: 1em;
+  color: black;
+  margin: 0 0.22em 0 0;
+}
+#profile .right {
+  width: 60%;
+}
+#profile .right section {
+  margin: 0 0 3em 0;
+}
+#profile .right section .section_title {
+  padding: 0.5em 0;
+  margin: 0 0 0.5em 0;
+  background: black;
+}
+#profile .right section .section_title .title {
+  font-size: 1.2em;
+  color: white;
+  padding: 0 0 0 0.5em;
+  text-align: left;
+}
+#profile .right section .content {
+  display: block;
+  margin: auto;
+  width: 95%;
+}
+#profile .right section #gallery_items {
+  list-style-type: none;
+}
+#profile .right section #gallery_items li {
+  width: 23%;
+  margin: 0 0.5em 1em 0;
+  display: inline-block;
+}
+#profile .right section #gallery_items li img {
+  width: 100%;
+  height: auto;
+}
+#profile .right section #change_this_ul_name_later {
+  margin: 0 0 0 1em;
+}
+#profile .right section #change_this_ul_name_later li {
+  margin: 0 0 0.4em 0;
 }
 /*--------------------------------------------------------------
  # Content
