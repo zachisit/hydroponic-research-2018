@@ -6,13 +6,11 @@
 # Mixins
 # Normalize
 # Header
-# Menu - Deskop and Mobile
+# Menu - Desktop and Mobile
 # Home Page Specific
 # User Profile
+# WooCommerce Product
 # Content
-# - Contact Page
-# - Online Education Plugin
-# Attorneys CPT Single Page
 # Sidebar
 # Page Specific Content
 # Sidebar
@@ -229,6 +227,24 @@ a {
   float:right;
 }
 
+.button {
+  @include border-radius(0.66em);
+  background:black;
+  color:white;
+  padding:0.54em 0.8em;
+  text-align:center;
+  border:none;
+  outline:none;
+  font-weight:500;
+  cursor:pointer;
+  font-size:0.9em;
+
+  &:hover {
+    @include transition(background 800ms);
+    background:purple;
+  }
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -429,6 +445,7 @@ header {
       text-align:center;
       margin:0;
       padding:0;
+      font-weight:100;
     }
   }
 }
@@ -573,6 +590,104 @@ header {
 
         li {
           margin:0 0 0.4em 0;
+        }
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# WooCommerce Product
+--------------------------------------------------------------*/
+.product {
+
+  #product_gallery_wrap {
+    width:47%;
+    float:left;
+    margin:3em 0 0 0;
+  }
+
+  .entry-summary {
+    float:right;
+    width:45%;
+    margin:3em 0 0 0;
+  }
+
+  #product_meta {
+    display:block;
+    margin:2em 0;
+    float:left;
+    width:100%;
+
+    section {
+      float:left;
+      margin:0 0 2em 0;
+      width:100%;
+
+      .s_title {
+        float:left;
+        width:100%;
+        padding:0.5em 0;
+        background:black;
+        margin:0 0 0.8em 0;
+
+        h2 {
+          color:white;
+          font-size:1.3em;
+          float:left;
+          padding:0 0 0 1em;
+          font-weight:100;
+        }
+
+        .section_accordian_trigger {
+          float:right;
+          width:30px;
+        }
+      }
+
+      .section_container {
+        display:block;
+        width:96%;
+        margin:auto;
+
+        .top_action {
+          display:block;
+          margin:1em 0;
+          width:100%;
+          float:left;
+        }
+      }
+
+      .left, .right {
+        width:49%;
+      }
+
+      &#related_products {
+
+        ul {
+          @include ul-no-list-style;
+
+          li {
+            @include image_responsive;
+            @include ul-li-last-item-no-margin;
+            display:inline-block;
+            width:32%;
+            margin:0 1em 0 0;
+
+            .product_title {
+              margin:1em 0;
+              text-align:center;
+              font-size:1.3em;
+              display:block;
+            }
+
+            &:hover {
+              @include transition(opacity 800ms);
+              @include transition(transform 800ms);
+              transform:scale(1.04);
+              opacity:0.8;
+            }
+          }
         }
       }
     }
