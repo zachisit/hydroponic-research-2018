@@ -21,6 +21,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 global $product; ?>
 </div><!--//entry-summary-->
+<!--
+@TODO:
+move the above ending div into the entry-summary template file,
+wrap it in an right class, update sass
+<!--</div><!--//wrapper starting above image gallery-->
 
 <div id="product_meta">
     <div class="wrapper">

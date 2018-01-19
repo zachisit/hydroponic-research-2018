@@ -38,6 +38,15 @@ add_action( 'wp', 'hr_woocommerce_remove_sidebar_product_pages' );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
 
+function hr_woocommerce_product_gallery() {
+    //add_theme_support( 'wc-product-gallery-zoom' );
+    //add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+}
+add_action( 'after_setup_theme', 'hr_woocommerce_product_gallery' );
+
+
+
 /**
  * Remove tabs
  *
@@ -53,3 +62,11 @@ function hr_woocommerce_remove_product_tabs( $tabs ) {
 }
 
 add_filter( 'woocommerce_product_tabs', 'hr_woocommerce_remove_product_tabs', 98 );
+
+/**
+ * Remove auto-related products showing on product page
+ */
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );

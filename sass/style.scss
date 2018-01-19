@@ -601,10 +601,38 @@ header {
 --------------------------------------------------------------*/
 .product {
 
-  #product_gallery_wrap {
+  .left {
     width:47%;
-    float:left;
     margin:3em 0 0 0;
+    
+    #onsale_block {
+      float:left;
+      position:absolute;
+      z-index:99;
+
+      .onsale {
+        @include border-radius(5em);
+        background:green;
+        color:white;
+        font-size:1em;
+        text-align:center;
+        padding:1em;
+        float:left;
+      }
+    }
+
+    #product_gallery_wrap {
+
+      .flex-control-nav {
+        @include ul-no-list-style;
+
+        li {
+          display:inline-block;
+          margin:0 0.5em 0 0;
+          cursor:pointer;
+        }
+      }
+    }
   }
 
   .entry-summary {

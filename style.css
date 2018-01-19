@@ -466,10 +466,33 @@ header#internal {
 /*--------------------------------------------------------------
  # WooCommerce Product
  --------------------------------------------------------------*/
-.product #product_gallery_wrap {
+.product .left {
   width: 47%;
-  float: left;
   margin: 3em 0 0 0;
+}
+.product .left #onsale_block {
+  float: left;
+  position: absolute;
+  z-index: 99;
+}
+.product .left #onsale_block .onsale {
+  -webkit-border-radius: 5em;
+  -moz-border-radius: 5em;
+  border-radius: 5em;
+  background: green;
+  color: white;
+  font-size: 1em;
+  text-align: center;
+  padding: 1em;
+  float: left;
+}
+.product .left #product_gallery_wrap .flex-control-nav {
+  list-style-type: none;
+}
+.product .left #product_gallery_wrap .flex-control-nav li {
+  display: inline-block;
+  margin: 0 0.5em 0 0;
+  cursor: pointer;
 }
 .product .entry-summary {
   float: right;
@@ -499,6 +522,7 @@ header#internal {
   font-size: 1.3em;
   float: left;
   padding: 0 0 0 1em;
+  font-weight: 100;
 }
 .product #product_meta section .s_title .section_accordian_trigger {
   float: right;
