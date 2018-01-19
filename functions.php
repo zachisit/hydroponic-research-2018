@@ -89,7 +89,7 @@ add_action('admin_init', 'hr_imagelink_setup', 10);
  */
 function hr_login_script()
 {
-    wp_enqueue_style( 'login_custom_style', get_stylesheet_directory_uri(). '/login_view.css', ['login'] );
+    wp_enqueue_style( 'login_custom_style', get_template_directory_uri() . '/login.css', ['login'] );
 }
 add_action( 'login_enqueue_scripts', 'hr_login_script', 1 );
 

@@ -604,7 +604,7 @@ header {
   .left {
     width:47%;
     margin:3em 0 0 0;
-    
+
     #onsale_block {
       float:left;
       position:absolute;
@@ -639,6 +639,15 @@ header {
     float:right;
     width:45%;
     margin:3em 0 0 0;
+
+    .product_title {
+      font-weight:100;
+      font-size:1.7em;
+    }
+
+    .price {
+      color:green;
+    }
   }
 
   #product_meta {
@@ -683,11 +692,18 @@ header {
           margin:1em 0;
           width:100%;
           float:left;
+
+          .top_link {
+            @include font-awesome-declaration('before', '\f0aa', 1em, 0 0.5em 0 0, orange, null);
+            color:orange;
+            font-weight:900;
+          }
         }
       }
 
       .left, .right {
         width:49%;
+        margin:0;
       }
 
       &#related_products {
@@ -698,6 +714,7 @@ header {
           li {
             @include image_responsive;
             @include ul-li-last-item-no-margin;
+            @include transition(transform 800ms ease);
             display:inline-block;
             width:32%;
             margin:0 1em 0 0;
@@ -709,9 +726,21 @@ header {
               display:block;
             }
 
+            .view_product{
+              display:block;
+              margin:0;
+              width:100%;
+
+              .button {
+                display:table;
+                width:58px;
+                margin:auto;
+              }
+            }
+
             &:hover {
-              @include transition(opacity 800ms);
-              @include transition(transform 800ms);
+              @include transition(opacity 800ms ease);
+              @include transition(transform 800ms ease);
               transform:scale(1.04);
               opacity:0.8;
             }
@@ -757,14 +786,33 @@ header {
 
           .thumbnail {
 
-            &:hover {
-              @include transition(opacity 800ms ease);
-              opacity:0.7;
+            img {
+              @include transition(transform 800ms ease);
+
+              &:hover {
+                @include transition(transform 800ms ease);
+                @include transition(opacity 800ms ease);
+                transform:scale(1.013);
+                opacity:0.7;
+              }
             }
           }
 
           .product_title {
+            margin:0.5em 0;
+            font-weight:500;
+          }
 
+          .product_cost {
+            color:green;
+          }
+        }
+
+        .quantity {
+          margin:0 0 0.5em 0;
+
+          .input-text {
+            width:50px;
           }
         }
       }

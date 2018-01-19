@@ -12,9 +12,6 @@
  --------------------------------------------------------------*/
 body, html {
   /*--------------------------------------------------------------
-   # Further Reading
-   --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
    # Admin UX
    --------------------------------------------------------------*/
 }
@@ -23,13 +20,6 @@ body .wp-heading-inline, html .wp-heading-inline {
 }
 body a, html a {
   color: #3f5a72;
-}
-body .further-reading-widget, html .further-reading-widget {
-  margin: 0.5em 0;
-}
-body .further-reading-widget:not(:first-of-type), html .further-reading-widget:not(:first-of-type) {
-  margin-top: 1.5em;
-  border-top: solid thin black;
 }
 body .meta-box-sortables, html .meta-box-sortables {
   /*--------------------------------------------------------------

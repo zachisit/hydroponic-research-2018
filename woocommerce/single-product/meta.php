@@ -23,9 +23,13 @@ global $product; ?>
 </div><!--//entry-summary-->
 <!--
 @TODO:
-move the above ending div into the entry-summary template file,
+move the above ending div
+and below wrapper ending div
+
+into the entry-summary template file,
 wrap it in an right class, update sass
-<!--</div><!--//wrapper starting above image gallery-->
+-->
+</div><!--//wrapper starting above image gallery-->
 
 <div id="product_meta">
     <div class="wrapper">
@@ -72,18 +76,21 @@ wrap it in an right class, update sass
                                 <?=image_creator('https://dummyimage.com/400x400/9c9c9c/fff.png&text=&nbsp;', 'test', null )?>
                                 <span class="product_title">Product Title</span>
                             </a>
+                            <div class="view_product"><a href="" title="" class="button">view</a></div>
                         </li>
                         <li>
                             <a href="" title="">
                                 <?=image_creator('https://dummyimage.com/400x400/9c9c9c/fff.png&text=&nbsp;', 'test', null )?>
                                 <span class="product_title">Product Title</span>
                             </a>
+                                <div class="view_product"><a href="" title="" class="button">view</a></div>
                         </li>
                         <li>
                             <a href="" title="">
                                 <?=image_creator('https://dummyimage.com/400x400/9c9c9c/fff.png&text=&nbsp;', 'test', null )?>
                                 <span class="product_title">Product Title</span>
                             </a>
+                            <div class="view_product"><a href="" title="" class="button">view</a></div>
                         </li>
                     </ul>
                 </div>
