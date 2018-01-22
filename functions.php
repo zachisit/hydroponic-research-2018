@@ -8,6 +8,7 @@
 require_once "shortcodes/sitemap.php";
 require_once "shortcodes/products_by_cat.php";
 require_once "shortcodes/user_profile.php";
+require_once "shortcodes/sales_assoc.php";
 require_once "woocommerce/woocommerce_functions.php";
 require_once "page_edit/page_scripts.php";
 require_once "page_edit/page_show_sidebar.php";
@@ -491,3 +492,39 @@ $result = add_role( 'sales-assoc', __('Sales Associate' ),
         'update_core' => false // user cant perform core updates
     ]
 );
+
+/**
+ * Sales Associate Login Redirection
+ *
+ * send 'sales-assoc' user role type to a
+ * certain landing page
+ *
+ * @param $url
+ * @param $request
+ * @param $user
+ * @return mixed
+ */
+function my_login_redirect( $url, $request, $user ){
+    if( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ) {
+        if( $user->has_cap( 'sales-assoc')) {
+            $url = home_url('/sales-associate-login/');
+        }
+    }
+
+    return $url;
+}
+add_filter('login_redirect', 'my_login_redirect', 10, 3 );
+
+
+//@TODO:finish this out
+//check user role, if sales-assoc limit to just landing page
+function global_user_level_check( ){
+//    global $user;
+//    var_dump($user);
+//    $role_name      = $user->roles[0];
+//    echo $role_name;
+    if ( 'sales-assoc' === $role_name ) {
+        wp_redirect(home_url('/sales-associate-login/'));
+        exit;
+    }
+}

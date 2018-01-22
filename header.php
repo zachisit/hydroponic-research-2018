@@ -35,7 +35,7 @@
     <?=get_post_meta( get_the_ID(), 'header_scripts', true ); //refer to /page_edit/page_scripts.php?>
 </head>
 <body>
-
+<?php global_user_level_check()//@TODO:finish this method?>
 <header<?=(!is_home()) ? ' id="internal"' : ''?>>
     <div class="wrapper">
         <div class="left">
@@ -43,6 +43,7 @@
                 <a href="<?=get_home_url(); ?>" title="<?=get_home_url(); ?> Home"><?=image_creator('https://dummyimage.com/300x80/9c9c9c/fff.png&text=logo', 'logo', null)?></a>
             </div>
         </div>
+        <?php if (!is_page('sales-associate-login')) : ?>
         <div class="right">
             <button id="menu_btn"></button>
             <div id="menu">
@@ -72,5 +73,6 @@
                 </nav>
             </div>
         </div>
+        <?php endif ?>
     </div>
 </header>

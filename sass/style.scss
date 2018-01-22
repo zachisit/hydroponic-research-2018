@@ -253,9 +253,19 @@ header {
   width:100%;
   padding:2em 0;
 
+  @include bp-small {
+    padding:1em 0;
+  }
+
   #logo {
+    @include image_responsive;
     width:auto;
     float:left;
+
+    @include bp-small {
+      width:70%;
+      margin:0 0 0 1em;
+    }
   }
 
   #menu {
@@ -297,7 +307,7 @@ header {
     content:"\f057";
     font-family:"FontAwesome";
     font-size:2.934em;
-    color:$error_red;
+    color:white;
   }
 
   @include bp-small {
@@ -311,7 +321,7 @@ header {
   outline:none;
   display:none;
   margin:0;
-  top:4em;
+  top:1em;
   right:2%;
   border:none;
   position:absolute;
@@ -320,7 +330,7 @@ header {
     content:"\f0c9";
     font-family:"FontAwesome";
     font-size:2.934em;
-    color:$error_red;
+    color:black;
     float:left;
   }
 
@@ -336,7 +346,7 @@ header {
   margin:-1em 0 0 0;//@TODO:not most elegant;fix later
 
   @include bp-small {
-    background:$error_red;
+    background:black;
     width:100%;
     height:576px;
     float:left;
@@ -352,10 +362,12 @@ header {
       display:inline-block;
       margin:0 1.3em 0 0;
       position:relative;
+      width:100%;
+      text-align:center;
 
       a {
         font-size:1em;
-        color:gray;/*TODO:change later*/;
+        color:white;/*TODO:change later*/;
       }
 
       //@include ul-li-last-item-no-pad;@TODO:create mixin later
@@ -431,6 +443,12 @@ header {
   width:100%;
   position:relative;
 
+  @include bp-small {
+    height:300px;
+    background:black;
+    margin:0 0 0.5em 0;
+  }
+
   #cta_headline {
     bottom:3em;
     width:80%;
@@ -439,6 +457,10 @@ header {
     right:0;
     left:0;
 
+    @include bp-small {
+      bottom:1em;
+    }
+
     h2 {
       color:white;
       font-size:2em;
@@ -446,6 +468,10 @@ header {
       margin:0;
       padding:0;
       font-weight:100;
+
+      @include bp-small {
+        font-size:1em;
+      }
     }
   }
 }
@@ -455,6 +481,11 @@ header {
   .left, .right {
     width:49.9%;
     //position:absolute;
+
+    @include bp-small {
+      width:100%;
+      float:left;
+    }
   }
 }
 
@@ -482,6 +513,10 @@ header {
   margin:auto;
   position:relative;
   bottom:16em;
+
+  @include bp-small {
+    bottom:4em;
+  }
 
 }
 
@@ -605,6 +640,10 @@ header {
     width:47%;
     margin:3em 0 0 0;
 
+    @include bp-small {
+      width:100%;
+    }
+
     #onsale_block {
       float:left;
       position:absolute;
@@ -639,6 +678,10 @@ header {
     float:right;
     width:45%;
     margin:3em 0 0 0;
+
+    @include bp-small {
+      width:100%;
+    }
 
     .product_title {
       font-weight:100;
@@ -702,8 +745,13 @@ header {
       }
 
       .left, .right {
+        @include image_responsive;
         width:49%;
         margin:0;
+
+        @include bp-small {
+          width:100%;
+        }
       }
 
       &#related_products {
@@ -718,6 +766,10 @@ header {
             display:inline-block;
             width:32%;
             margin:0 1em 0 0;
+
+            @include bp-small {
+              width:100%;
+            }
 
             .product_title {
               margin:1em 0;
@@ -757,6 +809,10 @@ header {
 #content_left {
   float:left;
   width:70%;
+
+  @include bp-small {
+    width:100%;
+  }
 }
 
 #full_width {
@@ -777,6 +833,11 @@ header {
       display:inline-block;
       margin:0 1em 4em 0;
       width:30%;
+
+      @include bp-small {
+        width:100%;
+        float:left;
+      }
 
       .product_item {
         text-align:center;
@@ -819,6 +880,10 @@ header {
 
       &:nth-child(3n+3) {
         margin:0;
+
+        @include bp-small {
+          margin:0 1em 4em 0;
+        }
       }
     }
   }
@@ -829,6 +894,33 @@ header {
     width:100%;
     margin:2em 0;
   }
+
+  #sales_assoc_table {
+    width:100%;
+    float:left;
+
+    #sales_assoc_table_list {
+      float:left;
+      width:100%;
+
+      thead {
+        background:black;
+        color:white;
+        padding:0.5em 0;
+      }
+
+      tbody {
+
+        tr {
+          border-bottom:1px solid #ccc;
+
+          &:nth-child(odd) {
+            background:#F5F5F5;
+          }
+        }
+      }
+    }
+  }
 }
 
 /*--------------------------------------------------------------
@@ -837,6 +929,10 @@ header {
 #sidebar {
   float:right;
   width:25%;
+
+  @include bp-small {
+    width:100%;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -969,6 +1065,10 @@ footer {
   #top {
     margin:0 0 4em 0;
 
+    @include bp-small {
+      margin:0 0 1.5em 0;
+    }
+
     #newsletter {
       width:300px;
       height:34px;
@@ -976,6 +1076,10 @@ footer {
       margin:auto;
       border:0.11em solid #ccc;
       padding:0.5em;
+
+      @include bp-small {
+        width:200px;
+      }
 
       #submit {
         float:left;
@@ -988,12 +1092,21 @@ footer {
         width:230px;
         padding:0.3em;
         font-size:1em;
+
+        @include bp-small {
+          width:128px;
+        }
       }
     }
   }
 
   .left, .right {
     width:50%;
+
+    @include bp-small {
+      width:100%;
+      text-align:center;
+    }
 
     h2 {
       font-size:1em;
@@ -1019,8 +1132,20 @@ footer {
   .logo_social {
     float:right;
 
+    @include bp-small {
+      margin:2em 0 0 0;
+      float:left;
+      width:100%;
+    }
+
     #logo {
       float:right;
+
+      @include bp-small {
+        width:80%;
+        margin:auto;
+        float:none;
+      }
     }
 
     #social {

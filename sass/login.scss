@@ -17,12 +17,14 @@ body {
   background:$background-color !important;
 
   #login {
-    background:red;
+    background:none;
 
     h1 {
 
       a {
-        background-image:url(https://dummyimage.com/80x80/9c9c9c/fff.png&text=notes) !important;
+        width:292px;
+        background-size:292px;
+        background-image:url(https://dummyimage.com/300x80/9c9c9c/fff.png&text=logo) !important;
       }
     }
   }

@@ -1,3 +1,4 @@
+<?php if (!is_page('sales-associate-login')) : ?>
 <footer>
     <div class="wrapper">
         <div id="top" class="row">
@@ -35,6 +36,7 @@
         </div>
     </div>
 </footer>
+<?php endif ?>
 <?php wp_footer(); ?>
 <?=get_post_meta( get_the_ID(), 'body_scripts', true );//refer to /page_edit/page_scripts.php?>
 

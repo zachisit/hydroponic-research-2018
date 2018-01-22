@@ -50,8 +50,13 @@
 This WordPress theme is [forked from] a bare-bones base theme created by Zach Smith called [tater](https://github.com/zachisit/tater-wordpress-theme), with base theme version number 1.6.1 Started in the summer of 2017, the purpose of this base theme is to start a new project with the code and coding structures needed to jump start development. This theme does not utilize a parent-child theme structure. This base theme will be updated as Zach progresses through better programming styles and structures. The preferred editor is PHPStorm, hence the existing .gitigore rule(s).
 
 ## User Roles During Testing
-Sales Assoc:
+#####Sales Assoc:
 
 user: tater
 
 pass: landing
+
+#####Global Admin
+user: @TODO 
+
+pass: @TODO
