@@ -5,13 +5,14 @@
  * @package hydroponic-research
  */
 
-require_once "shortcodes/sitemap.php";
-require_once "shortcodes/products_by_cat.php";
-require_once "shortcodes/user_profile.php";
-require_once "shortcodes/sales_assoc.php";
-require_once "woocommerce/woocommerce_functions.php";
-require_once "page_edit/page_scripts.php";
-require_once "page_edit/page_show_sidebar.php";
+require_once 'shortcodes/sitemap.php';
+require_once 'shortcodes/products_by_cat.php';
+require_once 'shortcodes/user_profile.php';
+require_once 'shortcodes/sales_assoc.php';
+require_once 'shortcodes/inbound_survey.php';
+require_once 'woocommerce/woocommerce_functions.php';
+require_once 'page_edit/page_scripts.php';
+require_once 'page_edit/page_show_sidebar.php';
 
 /**
  * Widgetize Theme
@@ -51,7 +52,9 @@ function hr_scripts()
 
     //css
     wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
-    //wp_enqueue_style( 'google_font_kreon', 'https://fonts.googleapis.com/css?family=Kreon:200,400,700,900');
+    wp_enqueue_style( 'google_font_montserate', 'https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900');
+    wp_enqueue_style( 'google_font_lora', 'https://fonts.googleapis.com/css?family=Lora:400,700');
+    wp_enqueue_style( 'google_font_opensans', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
     wp_enqueue_style( 'slick_carousel_css', 'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css');
     wp_enqueue_style( 'slick_css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css' );
 

@@ -136,9 +136,9 @@ $pinterest_brand_color:#bd081c;
 # Normalize
 --------------------------------------------------------------*/
 body {
+  font-family:'Open Sans', sans-serif;
   margin:0;
   padding:0;
-  font-family:sans-serif;
 }
 
 ul {
@@ -147,11 +147,13 @@ ul {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family:'Montserrat', sans-serif;
   margin:0 0 0.500em 0;
   padding:0;
 }
 
 a {
+  font-family:'Montserrat', sans-serif;
   color:blue;
   outline:none;
   text-decoration:none;
@@ -179,6 +181,7 @@ a {
 }
 
 .button_link {
+  font-family:'Montserrat', sans-serif;
   background:orange;/*TODO:change later*/;
   padding:0.438em 1.250em;
   text-align:center;
@@ -871,6 +874,7 @@ header {
       font-size:2.1em;
       margin:2em 0 2.5em 0;
       padding:0;
+      font-weight:100;
     }
 
     .product_category_landing_list_style {
@@ -913,6 +917,13 @@ header {
 
             .product_cost {
               color:green;
+            }
+
+            .weight_dropdown {
+              display:block;
+              margin:0.8em 0;
+              float:left;
+              width:100%;
             }
           }
 

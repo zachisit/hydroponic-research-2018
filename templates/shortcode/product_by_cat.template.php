@@ -18,6 +18,16 @@ if(isset($posts) && !empty($posts)): ?>
                         <h2 class="product_title"><?=$post->post_title?></h2>
                     </a>
                     <span class="product_cost"><?=$product->get_price_html()?></span>
+                    <div class="weight_dropdown">
+                        <label for="weight">Weight</label>
+                        <select id="weight" name="weight">
+                            <option>0.9 oz</option>
+                            <option>1.5 oz</option>
+                            <option>2.8 oz</option>
+                            <option>3.5 oz</option>
+                            <option>5 oz</option>
+                        </select>
+                    </div>
                     <div class="woocommerce-variation-add-to-cart variations_button">
                         <?php
                         /**

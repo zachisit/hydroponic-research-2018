@@ -34,19 +34,21 @@
  # Normalize
  --------------------------------------------------------------*/
 body {
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }
 ul {
   margin: 0;
   padding: 0;
 }
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
   margin: 0 0 0.5em 0;
   padding: 0;
 }
 a {
+  font-family: 'Montserrat', sans-serif;
   color: blue;
   outline: none;
   text-decoration: none;
@@ -70,6 +72,7 @@ a {
   white-space: nowrap;
 }
 .button_link {
+  font-family: 'Montserrat', sans-serif;
   background: orange;
   padding: 0.438em 1.25em;
   /*TODO:change later*/
@@ -711,7 +714,7 @@ header#internal {
   width: 73%;
 }
 #content_container #content_left ul, #content_container #content_left ol {
-  margin: 0 0 0 2em;
+  margin: 0 0 0 1.5em;
 }
 #content_container #content_left ul li, #content_container #content_left ol li {
   line-height: 1.2;
@@ -744,6 +747,7 @@ header#internal {
   font-size: 2.1em;
   margin: 2em 0 2.5em 0;
   padding: 0;
+  font-weight: 100;
 }
 #content_container #full_width .product_category_landing_list_style {
   list-style-type: none;
@@ -792,6 +796,12 @@ header#internal {
 }
 #content_container #full_width .product_category_landing_list_style li .product_item a .product_cost {
   color: green;
+}
+#content_container #full_width .product_category_landing_list_style li .product_item a .weight_dropdown {
+  display: block;
+  margin: 0.8em 0;
+  float: left;
+  width: 100%;
 }
 #content_container #full_width .product_category_landing_list_style li .product_item .quantity {
   margin: 0 0 0.5em 0;

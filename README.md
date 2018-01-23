@@ -29,7 +29,14 @@
 
 ## Theme Fonts
 * To save server space and user load time, we use Google Fonts. The following are the client approved fonts this theme relies on. Fallback font will be sans-serif.
-* Google Fonts '[FONT-NAME]' for [FONT-USES-ON-SITE] - https://fonts.google.com/specimen/[FULL-FONT-URL]
+
+Font Name  | Font Usage
+------------- | -------------
+Montserrat  | Headlines, buttons
+Lora  | Accent, subtitles
+Open Sans  | Body font
+
+* Fallback will be sans-serif in most cases.
 
 ## Image Preloading
 * Theme utilizing preloading of any files placed inside the theme/images/preload directory. Refer to file documentation on safe-use.
