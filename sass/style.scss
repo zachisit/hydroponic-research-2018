@@ -7,9 +7,10 @@
 # Normalize
 # Header
 # Menu - Desktop and Mobile
+# Cart Banner
 # Home Page Specific
 # User Profile
-# WooCommerce Product
+# WooCommerce Specific
 # Content
 # Sidebar
 # Page Specific Content
@@ -247,6 +248,7 @@ a {
     background:purple;
   }
 }
+
 #page_header {
   background:#ccc;//@TODO:chnge later with brand color
   min-height:200px;
@@ -452,6 +454,22 @@ header {
 }
 
 /*--------------------------------------------------------------
+# Cart Banner
+---------------------------------------------------------------*/
+#cart_banner {
+  float:left;
+  width:100%;
+  background:#ccc;
+  padding:1em 0;
+
+  p {
+    text-align:right;
+    margin:0;
+    padding:0;
+  }
+}
+
+/*--------------------------------------------------------------
 # Home Page Specific
 --------------------------------------------------------------*/
 #product_banner {
@@ -649,7 +667,7 @@ header {
 }
 
 /*--------------------------------------------------------------
-# WooCommerce Product
+# WooCommerce Specific
 --------------------------------------------------------------*/
 .product {
 
@@ -818,6 +836,10 @@ header {
       }
     }
   }
+}
+
+.woocommerce-message {
+  display:none;
 }
 
 /*--------------------------------------------------------------

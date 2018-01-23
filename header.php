@@ -36,6 +36,14 @@
 </head>
 <body>
 <?php global_user_level_check()//@TODO:finish this method?>
+
+<?php if (sizeof(WC()->cart->get_cart()) != 0) :?>
+<div id="cart_banner">
+    <div class="wrapper">
+        <p><a class="button" title="View Your Cart" href="<?=home_url('/cart')?>">View Your Cart</a></p>
+    </div>
+<?php endif ?>
+</div>
 <header<?=(!is_home()) ? ' id="internal"' : ''?>>
     <div class="wrapper">
         <div class="left">
