@@ -7,13 +7,16 @@
 get_header();
 $showSide = get_post_meta( get_the_ID(), '_show_sidebar', true );
 ?>
+<?=pageBannerImage()?>
     <main>
         <div class="wrapper">
-            <?php if ($showSide) { get_sidebar(); } ?>
-            <div id="<?=($showSide) ? 'content_right' : 'full_width' ?>" class="content_text">
-                <?php while ( have_posts() ) : the_post();
-                    echo the_content();
-                endwhile; ?>
+            <div id="content_container">
+                <?php if ($showSide) { get_sidebar(); } ?>
+                <div id="<?=($showSide) ? 'content_left' : 'full_width' ?>" class="content_text">
+                    <?php while ( have_posts() ) : the_post();
+                        echo the_content();
+                    endwhile; ?>
+                </div>
             </div>
         </div>
     </main>
