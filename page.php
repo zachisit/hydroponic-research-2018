@@ -7,7 +7,7 @@
 get_header();
 $showSide = get_post_meta( get_the_ID(), '_show_sidebar', true );
 ?>
-<?php if ( (is_singular()) && (!is_page(['grow-notes', 'products'])) ) :?>
+<?php if ( (is_singular()) && (!is_page(['grow-notes', 'products', 'inbound-survey'])) ) :?>
 <?=pageBannerImage()?>
 <?php endif ?>
     <main>
