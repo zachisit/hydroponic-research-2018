@@ -16,10 +16,9 @@
  *
  * Tied to function XXXX_theme_preload_dir()
  *
- * dependencies: jquery
- *
- * version:
- * 1.1.0
+ * @depenency jquery
+ * @version 1.0.0
+ * @package hydroponic-research
  *
  */
 jQuery(document).ready(function($) {

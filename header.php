@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes()?>>
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta charset="<?php bloginfo( 'charset' ) ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
-    <title><?php if ( !is_front_page() ) { wp_title( '|', true, 'right' ); } bloginfo( 'name' ); ?></title>
+    <title><?php if ( !is_front_page() ) { wp_title( '|', true, 'right' ); } bloginfo( 'name' )?></title>
 
     <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" href="images/preload/apple-touch-icon.png"><!--//TODO:provide-->
@@ -31,12 +31,12 @@
     <meta name="twitter:title" content="Content Title">
     <meta name="twitter:description" content="Content description less than 200 characters">
     <meta name="twitter:image" content="https://example.com/image.jpg">
-    <?php wp_head(); ?>
+    <?php wp_head() ?>
     <?=get_post_meta( get_the_ID(), 'header_scripts', true ); //refer to /page_edit/page_scripts.php?>
 </head>
 <body>
 <?php global_user_level_check()//@TODO:finish this method?>
-
+<a name="top_of_page"></a>
 <?php if (sizeof(WC()->cart->get_cart()) != 0) :?>
 <div id="cart_banner">
     <div class="wrapper">
@@ -48,7 +48,7 @@
     <div class="wrapper">
         <div class="left">
             <div id="logo">
-                <a href="<?=get_home_url(); ?>" title="<?=get_home_url(); ?> Home"><?=image_creator('https://dummyimage.com/300x80/9c9c9c/fff.png&text=logo', 'logo', null)?></a>
+                <a href="<?=get_home_url()?>" title="<?=get_home_url()?> Home"><?=image_creator('https://dummyimage.com/300x80/9c9c9c/fff.png&text=logo', 'logo', null)?></a>
             </div>
         </div>
         <?php if (!is_page('sales-associate-login')) : ?>
@@ -57,7 +57,7 @@
             <div id="menu">
                 <button id="menu_close"></button>
                 <div id="search_mobile">
-                    <?php get_search_form(); ?>
+                    <?php get_search_form() ?>
                 </div>
                 <nav>
                     <ul>

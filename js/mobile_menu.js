@@ -3,8 +3,9 @@
  *
  * mobile menu using jquery
  *
- * version:
- * 1.0.8
+ * @depenency jquery
+ * @version 1.0.0
+ * @package hydroponic-research
  *
  */
 jQuery(function($) {

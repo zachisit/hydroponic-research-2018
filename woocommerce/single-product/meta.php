@@ -42,7 +42,7 @@ wrap it in an right class, update sass
                 <div class="right">
                     <p>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit. Eos erant dolorum an. Per facer affert ut. Mei iisque mentitum moderatius cu. Sit munere facilis accusam eu dicat falli consulatu at vis. Te...</p>
                 </div>
-                <div class="top_action"><a href="" title="go to top" class="top_link">top</a></div>
+                <div class="top_action"><a href="#top_of_page" title="go to top" class="top_link">top</a></div>
             </div>
         </section>
 
@@ -52,7 +52,7 @@ wrap it in an right class, update sass
                 <div class="row">
                     <?=image_creator('https://dummyimage.com/1400x400/9c9c9c/fff.png&text=product+selection+image;', 'product overview image', null )?>
                 </div>
-                <div class="top_action"><a href="" title="go to top" class="top_link">top</a></div>
+                <div class="top_action"><a href="#top_of_page" title="go to top" class="top_link">top</a></div>
             </div>
         </section>
 
@@ -62,7 +62,7 @@ wrap it in an right class, update sass
                 <div class="row">
                     <?=image_creator('https://dummyimage.com/1400x400/9c9c9c/fff.png&text=technical+support+image;', 'product overview image', null )?>
                 </div>
-                <div class="top_action"><a href="" title="go to top" class="top_link">top</a></div>
+                <div class="top_action"><a href="#top_of_page" title="go to top" class="top_link">top</a></div>
             </div>
         </section>
 
@@ -76,7 +76,7 @@ wrap it in an right class, update sass
                                 <?=image_creator('https://dummyimage.com/400x400/9c9c9c/fff.png&text=&nbsp;', 'test', null )?>
                                 <span class="product_title">Product Title</span>
                             </a>
-                            <div class="view_product"><a href="" title="" class="button">view</a></div>
+                            <div class="view_product"><a href="#top_of_page" title="" class="button">view</a></div>
                         </li>
                         <li>
                             <a href="" title="">
@@ -90,11 +90,11 @@ wrap it in an right class, update sass
                                 <?=image_creator('https://dummyimage.com/400x400/9c9c9c/fff.png&text=&nbsp;', 'test', null )?>
                                 <span class="product_title">Product Title</span>
                             </a>
-                            <div class="view_product"><a href="" title="" class="button">view</a></div>
+                            <div class="view_product"><a href="#top_of_page" title="" class="button">view</a></div>
                         </li>
                     </ul>
                 </div>
-                <div class="top_action"><a href="" title="go to top" class="top_link">top</a></div>
+                <div class="top_action"><a href="#top_of_page" title="go to top" class="top_link">top</a></div>
             </div>
         </section>
     </div>

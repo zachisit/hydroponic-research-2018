@@ -9,11 +9,9 @@
  * the document links to open in new window,
  * and will serve as a fallback
  *
- * dependecies:
- * jquery
- *
- * version:
- * 1.0.0
+ * @depenency jquery
+ * @version 1.0.0
+ * @package hydroponic-research
  *
  */
 jQuery(document).ready(function($) {

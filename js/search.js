@@ -4,8 +4,9 @@
  * if user hits search button with nothing filled in:
  * redirect focus to input field
  *
- * version:
- * 1.0.0
+ * @depenency jquery
+ * @version 1.0.0
+ * @package hydroponic-research
  */
 jQuery(document).ready(function($) {
 

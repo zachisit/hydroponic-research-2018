@@ -387,7 +387,7 @@ function checkPluginsRequired() {
     $this_theme_version = $this_theme->get('Version');
 
     //WP-SCSS Plugin
-    if(!is_plugin_active( 'WP-SCSS-master/wp-scss.php' ))	{
+    if(!is_plugin_active( 'wp-scss/wp-scss.php' ))	{
         $plugin_messages[] = 'The '.$this_theme_name.' v.'.$this_theme_version.' theme requires you to install the WP-SCSS plugin - <a href="https://wordpress.org/plugins/wp-scss/" title="Download the required plugin here" target="_blank">download it from here</a> or activate if currently installed.';
     }
 
@@ -447,12 +447,12 @@ function get_latest_post($category_slug, $return_number, $title = false, $excerp
     $the_query = new WP_Query( $args );
 
     if ( $the_query->have_posts() ) :
-        while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-            <?php if ($title) : ?><div class="title"><?=the_title()?></div><?php endif; ?>
+        while ( $the_query->have_posts() ) : $the_query->the_post() ?>
+            <?php if ($title) : ?><div class="title"><?=the_title()?></div><?php endif ?>
             <?php if ($date) : ?><div class="date"><?=the_date()?></div><?php endif; ?>
             <?=getFeaturedImage(get_the_ID(), 'medium')?>
-            <?php if ($excerpt) : ?><div class="excerpt"><?=the_excerpt()?></div><?php endif; ?>
-            <?php if ($readmore) : ?><div class="readmore"><a href="<?=the_permalink()?>" title="<?=the_title(); ?>">read more</a></div><?php endif; ?>
+            <?php if ($excerpt) : ?><div class="excerpt"><?=the_excerpt()?></div><?php endif ?>
+            <?php if ($readmore) : ?><div class="readmore"><a href="<?=the_permalink()?>" title="<?=the_title(); ?>">read more</a></div><?php endif ?>
             <?php
         endwhile;
     endif;

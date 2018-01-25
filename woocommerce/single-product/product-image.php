@@ -37,11 +37,11 @@ $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_cl
     <div class="left">
         <div id="onsale_block">
             <?php if ( $product->is_on_sale() ) : ?>
-                <?=apply_filters( 'woocommerce_sale_flash', '<div class="onsale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</div>', $post, $product ); ?>
+                <?=apply_filters( 'woocommerce_sale_flash', '<div class="onsale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</div>', $post, $product ) ?>
             <?php endif ?>
         </div>
         <div id="product_gallery_wrap">
-            <div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
+            <div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?=esc_attr( $columns ); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
                 <figure class="woocommerce-product-gallery__wrapper">
                     <?php
                     $attributes = array(

@@ -3,11 +3,10 @@
  *
  * Initialize slider related to a css div
  *
- * @dependencies: slick slider
- * http://kenwheeler.github.io/slick/
- *
- * version:
- * 1.0.1
+ * @depenency slick slider
+ * jquery
+ * @version 1.0.0
+ * @package hydroponic-research
  *
  */
 

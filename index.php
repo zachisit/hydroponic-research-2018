@@ -6,7 +6,7 @@
  *
  * @package hydroponic-research
  */
-get_header(); ?>
+get_header() ?>
 
 <main>
     <div id="product_banner">
@@ -54,4 +54,4 @@ get_header(); ?>
     </div>
 </main>
 
-<?php get_footer(); ?>
+<?php get_footer() ?>

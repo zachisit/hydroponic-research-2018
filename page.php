@@ -7,7 +7,7 @@
 get_header();
 $showSide = get_post_meta( get_the_ID(), '_show_sidebar', true );
 ?>
-<?php if ( (is_singular()) && (!is_page(['grow-notes', 'products', 'inbound-survey'])) ) :?>
+<?php if ( (is_singular()) && (!is_page(['grow-notes', 'cart', 'checkout', 'products', 'inbound-survey'])) ) :?>
 <?=pageBannerImage()?>
 <?php endif ?>
     <main>
@@ -17,9 +17,9 @@ $showSide = get_post_meta( get_the_ID(), '_show_sidebar', true );
                 <div id="<?=($showSide) ? 'content_left' : 'full_width' ?>" class="content_text">
                     <?php while ( have_posts() ) : the_post();
                         echo the_content();
-                    endwhile; ?>
+                    endwhile ?>
                 </div>
             </div>
         </div>
     </main>
-<?php get_footer(); ?>
+<?php get_footer() ?>

@@ -20,24 +20,24 @@
             </div>
             <div class="logo_social">
                 <div id="logo">
-                    <a href="<?=get_home_url(); ?>" title="<?=get_home_url(); ?> Home"><?=image_creator('https://dummyimage.com/300x80/9c9c9c/fff.png&text=logo', 'logo', null)?></a>
+                    <a href="<?=get_home_url()?>" title="<?=get_home_url()?> Home"><?=image_creator('https://dummyimage.com/300x80/9c9c9c/fff.png&text=logo', 'logo', null)?></a>
                 </div>
                 <ul id="social">
-                    <li><a href="facebook.com" title="<?=get_bloginfo( 'name' ); ?> Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                    <li><a href="instagram.com" title="<?=get_bloginfo( 'name' ); ?> Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li><a href="twitter.com" title="<?=get_bloginfo( 'name' ); ?> Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-                    <li><a href="youtube.com" title="<?=get_bloginfo( 'name' ); ?> YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                    <li><a href="facebook.com" title="<?=get_bloginfo( 'name' )?> Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                    <li><a href="instagram.com" title="<?=get_bloginfo( 'name' )?> Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="twitter.com" title="<?=get_bloginfo( 'name' )?> Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                    <li><a href="youtube.com" title="<?=get_bloginfo( 'name' )?> YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </div>
 
         <div id="bottom">
-            <p>Hosted by <a href="" title="">Handsome Cat Hosting</a> - Made in the USA <img src="<?php echo get_template_directory_uri(); ?>/images/preload/usa_flag.jpg" alt="<?php echo get_bloginfo( 'name' ); ?> - USA" /></p>
+            <p>Hosted by <a href="" title="">Handsome Cat Hosting</a> - Made in the USA <img src="<?=get_template_directory_uri()?>/images/preload/usa_flag.jpg" alt="<?=get_bloginfo( 'name' )?> - USA" /></p>
         </div>
     </div>
 </footer>
 <?php endif ?>
-<?php wp_footer(); ?>
+<?php wp_footer() ?>
 <?=get_post_meta( get_the_ID(), 'body_scripts', true );//refer to /page_edit/page_scripts.php?>
 
 <!--Google Analytics-->

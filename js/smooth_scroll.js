@@ -3,18 +3,22 @@
  *
  * Basic anchor text link smooth scroll script
  *
+ * @depenency jquery
+ * @version 1.0.0
+ * @package hydroponic-research
+ *
  */
 jQuery(document).ready(function($){
-    $('a[href^="#top"]').on('click',function (e) {
-        e.preventDefault();
-
-        var target = this.hash;
-        var $target = $(target);
-
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top
-        }, 1000, 'swing');
-    });
+    // $('a[href^="#top"]').on('click',function (e) {
+    //     e.preventDefault();
+    //
+    //     var target = this.hash;
+    //     var $target = $(target);
+    //
+    //     $('html, body').stop().animate({
+    //         'scrollTop': $target.offset().top
+    //     }, 1000, 'swing');
+    // });
 
     $('a[href*="#"]:not([href="#"])').click(function() {
 

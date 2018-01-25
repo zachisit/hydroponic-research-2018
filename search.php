@@ -26,17 +26,17 @@ $the_query = new WP_Query($search_query);
     <div class="wrapper">
         <div id="content_left">
             <?php if ( have_posts() ) : ?>
-                <h1><?php printf( __( 'Search Results for: %s', 'shape' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                <h1><?php printf( __( 'Search Results for: %s', 'shape' ), '<span>' . get_search_query() . '</span>' ) ?></h1>
                 <ul>
-                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                    <?php while ( $the_query->have_posts() ) : $the_query->the_post()?>
                         <li>
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
                         </li>
-                    <?php endwhile; ?>
+                    <?php endwhile ?>
                 </ul>
             <?php else: ?>
-                <p>No results found. Please <a href="<?= get_home_url(); ?>/search" title="search page">search again</a>.</p>
-            <?php endif; ?>
+                <p>No results found. Please <a href="<?=get_home_url()?>/search" title="search page">search again</a>.</p>
+            <?php endif ?>
         </div>
     </div>
-<?php get_footer(); ?>
+<?php get_footer() ?>
