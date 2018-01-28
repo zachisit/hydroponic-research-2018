@@ -10,6 +10,7 @@ require_once 'shortcodes/products_by_cat.php';
 require_once 'shortcodes/user_profile.php';
 require_once 'shortcodes/sales_assoc.php';
 require_once 'shortcodes/inbound_survey.php';
+require_once 'shortcodes/homepage_product_banner.php';
 require_once 'woocommerce/woocommerce_functions.php';
 require_once 'page_edit/page_scripts.php';
 require_once 'page_edit/page_show_sidebar.php';
@@ -62,6 +63,7 @@ function hr_scripts()
     wp_enqueue_script( 'preload_directory', get_template_directory_uri() . '/js/preload_directory.js',  time() );
     wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/966d4a5f64.js', time() );
     wp_enqueue_script( 'mobile-menu', get_template_directory_uri() . '/js/mobile_menu.js', time(), true );
+    wp_enqueue_script( 'homepage_product_banner', get_template_directory_uri() . '/js/homepage_product_banner.js',  time() );
     wp_enqueue_script( 'videoWrapper', get_template_directory_uri() . '/js/videoWrapper.js',  time() );
     wp_enqueue_script( 'smooth_scroll', get_template_directory_uri() . '/js/smooth_scroll.js',  time() );
     wp_enqueue_script( 'pdf_css_icon_add', get_template_directory_uri() . '/js/pdf_css_icon_add.js', time() );

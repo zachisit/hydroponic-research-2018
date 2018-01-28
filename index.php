@@ -10,10 +10,8 @@ get_header() ?>
 
 <main>
     <div id="product_banner">
-        <?=image_creator('https://dummyimage.com/1400x400/9c9c9c/fff.png&text=&nbsp;', 'product_ad_banner', null )?>
-        <div id="cta_headline">
-            <h2>Lorem ipsum dolor sit amet et delectus</h2>
-        </div>
+<!--        --><?//=image_creator('https://dummyimage.com/1400x400/9c9c9c/fff.png&text=&nbsp;', 'product_ad_banner', null )?>
+        <?=do_shortcode('[homepage_product_banner]')?>
     </div>
     <div id="under_header_two_boxes" class="row">
         <div class="wrapper">

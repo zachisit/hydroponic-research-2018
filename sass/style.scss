@@ -132,12 +132,21 @@ $pinterest_brand_color:#bd081c;
     }
   }
 }
+@mixin font-open-sans {
+  font-family:'Open Sans', sans-serif;
+}
+@mixin font-lora {
+  font-family:'Lora', serif;
+}
+@mixin font-montserrat {
+  font-family:'Montserrat', sans-serif;
+}
 
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
 body {
-  font-family:'Open Sans', sans-serif;
+  @include font-open-sans;
   margin:0;
   padding:0;
 }
@@ -148,13 +157,13 @@ ul {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family:'Montserrat', sans-serif;
+  @include font-montserrat;
   margin:0 0 0.500em 0;
   padding:0;
 }
 
 a {
-  font-family:'Montserrat', sans-serif;
+  @include font-montserrat;
   color:blue;
   outline:none;
   text-decoration:none;
@@ -446,7 +455,7 @@ header {
   @include image_responsive;
   float:left;
   width:100%;
-  position:relative;
+  margin:1.5em 0 0 0;
 
   @include bp-small {
     height:300px;
@@ -454,29 +463,75 @@ header {
     margin:0 0 0.5em 0;
   }
 
-  #cta_headline {
-    bottom:3em;
-    width:80%;
+  #homepage_product_banner {
+    @include ul-no-list-style;
+    width:1301px;
     margin:auto;
-    position:absolute;
-    right:0;
-    left:0;
 
-    @include bp-small {
-      bottom:1em;
-    }
+    li {
+      @include ul-li-last-item-no-margin;
+      display:inline-block;
+      margin:0 1em 0 0;
 
-    h2 {
-      color:white;
-      font-size:2em;
-      text-align:center;
-      margin:0;
-      padding:0;
-      font-weight:100;
+      .product {
+        width:200px;
+        height:261px;
+        cursor:pointer;
+        position:relative;
 
-      @include bp-small {
-        font-size:1em;
+        img {
+          margin:auto;
+          position:absolute;
+        }
+
       }
+
+      .product_title {
+        @include font-montserrat;
+        margin:1em 0;
+        font-size:1.2em;
+        color:#333;
+        text-align:center;
+      }
+
+      &:hover {
+
+        .product {
+
+          img {
+            @include transition(800ms margin ease);
+            top:-10px;
+          }
+        }
+      }
+
+      &.selected {
+
+        .product {
+
+          img {
+            @include transition(800ms margin ease);
+            top:-10px;
+            border-bottom:3px solid black;
+          }
+        }
+
+      }
+    }
+  }
+
+  #product_title_message {
+    margin:0 auto;
+    width:80%;
+    height:150px;
+
+    p {
+      @include font-lora;
+      padding:0.5em 0;
+      background:black;
+      text-align:center;
+      font-size:1.3em;
+      color:white;
     }
   }
 }

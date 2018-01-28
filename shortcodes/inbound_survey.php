@@ -7,7 +7,7 @@ function hr_inbound_survey() {
 
     $string = populate_template_file('/shortcode/inbound_survey',
         [
-            //
+            //nothing here
         ]
     );
 
