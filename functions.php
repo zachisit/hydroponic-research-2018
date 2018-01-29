@@ -66,6 +66,7 @@ function hr_scripts()
     wp_enqueue_script( 'homepage_product_banner', get_template_directory_uri() . '/js/homepage_product_banner.js',  time() );
     wp_enqueue_script( 'videoWrapper', get_template_directory_uri() . '/js/videoWrapper.js',  time() );
     wp_enqueue_script( 'smooth_scroll', get_template_directory_uri() . '/js/smooth_scroll.js',  time() );
+    wp_enqueue_script( 'shop_add_var_to_cart', get_template_directory_uri() . '/js/shop_add_var_to_cart.js',  time() );
     wp_enqueue_script( 'pdf_css_icon_add', get_template_directory_uri() . '/js/pdf_css_icon_add.js', time() );
     wp_enqueue_script( 'slick_carousel_js', 'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', [], time(), true );
     wp_enqueue_script( 'slick_config', get_template_directory_uri() . '/js/slick_config.js', time() );
