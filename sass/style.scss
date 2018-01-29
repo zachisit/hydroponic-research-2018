@@ -5,6 +5,7 @@
 # Social Brand Colors
 # Mixins
 # Normalize
+# General Dialog Modals
 # Header
 # Menu - Desktop and Mobile
 # Cart Banner
@@ -270,6 +271,20 @@ a {
     text-align:center;
     margin:2em 0 0 0;
     font-weight:100;
+  }
+}
+
+/*--------------------------------------------------------------
+# General Dialog Modals
+---------------------------------------------------------------*/
+.generalDialog {
+
+  h2 {
+    color:orange;
+    text-align:center;
+    font-weight:100;
+    margin:0.5em 0;
+    padding:0;
   }
 }
 
