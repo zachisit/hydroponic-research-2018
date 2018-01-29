@@ -3,13 +3,14 @@
  *
  * css/js animation for homepage product banner
  *
- * @depenency jquery
+ * @dependency jquery
  * @version 1.0.0
  * @package hydroponic-research
  *
  */
 jQuery(function($) {
     var $homepageProductBanner = $('#homepage_product_banner'),
+        $productTitleMessage = $('#product_title_message'),
         $productOne = $('#p_one'),
         $productTwo = $('#p_two'),
         $productThree = $('#p_three'),
@@ -33,6 +34,7 @@ jQuery(function($) {
     //then pull and show the message
     $homepageProductBanner.find('li').each(function() {
         if ($(this).hasClass('selected')) {
+            //@TODO:determine when slick-active added
             showProductMessage($(this).attr('data-id'));
         }
     });
@@ -52,30 +54,24 @@ jQuery(function($) {
         showProductMessage($(this).attr('data-id'));
     });
 
-
-
+    //general hover effect
     $productOne.mouseover(function() {
-        $productTitleMessage.find('p').html('Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.');
+        $productTitleMessage.find('p').html(productMessageData[0]);
     });
-
     $productTwo.mouseover(function() {
-        $productTitleMessage.find('p').html('Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. ');
+        $productTitleMessage.find('p').html(productMessageData[1]);
     });
-
     $productThree.mouseover(function() {
-        $productTitleMessage.find('p').html('Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?');
+        $productTitleMessage.find('p').html(productMessageData[2]);
     });
-
     $productFour.mouseover(function() {
-        $productTitleMessage.find('p').html('At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.');
+        $productTitleMessage.find('p').html(productMessageData[3]);
     });
-
     $productFive.mouseover(function() {
-        $productTitleMessage.find('p').html('Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur .');
+        $productTitleMessage.find('p').html(productMessageData[4]);
     });
-
     $productSix.mouseover(function() {
-        $productTitleMessage.find('p').html('Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
+        $productTitleMessage.find('p').html(productMessageData[5]);
     });
 
     /**

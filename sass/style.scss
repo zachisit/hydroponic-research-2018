@@ -458,8 +458,7 @@ header {
   margin:1.5em 0 0 0;
 
   @include bp-small {
-    height:300px;
-    background:black;
+    height:568px;
     margin:0 0 0.5em 0;
   }
 
@@ -467,6 +466,14 @@ header {
     @include ul-no-list-style;
     width:1301px;
     margin:auto;
+
+    @include bp-small {
+      width:205px;
+
+      .slick-dots {
+        height:40px;
+      }
+    }
 
     li {
       @include ul-li-last-item-no-margin;
@@ -484,6 +491,13 @@ header {
           position:absolute;
         }
 
+        .hover_image {
+          display:none;
+          float:left;
+          width:100%;
+          position:absolute;
+          bottom:0;
+        }
       }
 
       .product_title {
@@ -492,6 +506,10 @@ header {
         font-size:1.2em;
         color:#333;
         text-align:center;
+
+        @include bp-small {
+          width:206px;
+        }
       }
 
       &:hover {
@@ -502,6 +520,14 @@ header {
             @include transition(800ms margin ease);
             top:-10px;
           }
+
+          .hover_image {
+            display:block;
+          }
+        }
+
+        .product_title {
+          font-weight:700;
         }
       }
 
@@ -512,26 +538,41 @@ header {
           img {
             @include transition(800ms margin ease);
             top:-10px;
-            border-bottom:3px solid black;
+          }
+
+          .hover_image {
+            display:block;
           }
         }
 
+        .product_title {
+          font-weight:700;
+        }
       }
     }
   }
 
   #product_title_message {
     margin:0 auto;
-    width:80%;
+    width:75%;
     height:150px;
+
+    @include bp-small {
+      width:95%;
+      margin:0.3em auto;
+    }
 
     p {
       @include font-lora;
-      padding:0.5em 0;
+      padding:0.5em;
       background:black;
       text-align:center;
       font-size:1.3em;
       color:white;
+
+      @include bp-small {
+        font-size:1em;
+      }
     }
   }
 }
@@ -558,9 +599,13 @@ header {
 
     li {
       @include image_responsive;
-      width:300px;
+      width:300px !important;
       float:left;
       margin:0 1em 0 0;
+
+      @include bp-small {
+        margin:0;
+      }
     }
   }
 }
@@ -1288,6 +1333,10 @@ footer {
       text-align:center;
       font-size:0.8em;
       color:#333;
+
+      @include bp-small {
+        font-size:0.7em;
+      }
 
       a {
         color:#333;
