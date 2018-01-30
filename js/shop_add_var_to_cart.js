@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
 
     $addToCartButton.click(function( ) {
         var $productVariationNumber = $(this).closest('div').find('.weight_dropdown').find('#weight').val(),
-            $productName = $(this).closest('div').find('.product_title').html(),
+            $productName = $(this).closest('div').parent().find('.product_title').html(),
             $productID = $(this).closest('li').attr('data-id'),
             $productQty = $(this).closest('div').find('#quantity').val(),
             $dialog = document.getElementById('orderAdded');
@@ -26,6 +26,8 @@ jQuery(document).ready(function($) {
                 buildDialogBox($dialog, 'Uh, oh!', 'You need to specify a weight before adding to your Cart.', 0, 1);
             } else if ( !$productQty ) {//is qty specified?
                 buildDialogBox($dialog, 'Uh, oh!', 'You need to specify a quantity before adding to your Cart.', 0, 1);
+            } else if ($productQty < 0) {//is qty less than 0?
+                buildDialogBox($dialog, 'Uh, oh!', 'It is impossible to purchase negative of something!', 0, 1);
             } else {//all good - post product to cart
                 productPost(1, $productID, $productVariationNumber, $productName, $productQty);
             }
@@ -46,6 +48,9 @@ jQuery(document).ready(function($) {
     function buildDialogBox($dialog, headline, message, showViewCart, showCloseDialog) {
         $('body').append('<div id="overlay"></div>');
 
+        var $dialogModal = $('#orderAdded'),
+            $dialogOverlay = $('#overlay');
+
         $dialog.innerHTML = '<h2>'+headline+'</h2>';
         $dialog.innerHTML += '<p>'+message+'</p>';
         $dialog.innerHTML += '<div id="user_action_buttons" class="row"><div class="right"><ul id="action_items"></ul></div></div>';
@@ -57,7 +62,8 @@ jQuery(document).ready(function($) {
             $('#action_items').append('<li><button class="action_button background-none" id="close_dialog">ok, thanks</button></li>');
         }
 
-        $dialog.showModal();
+        $dialogOverlay.show();
+        $dialogModal.show();
 
         var $dialogViewCart = $('#view_cart'),
             $dialogClose = $('#close_dialog');
@@ -66,7 +72,8 @@ jQuery(document).ready(function($) {
             window.location.href = 'cart';
         });
         $dialogClose.click(function() {
-            $dialog.close();
+            $dialogModal.hide();
+            $dialogOverlay.hide();
         });
     }
 

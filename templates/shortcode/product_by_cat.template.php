@@ -33,4 +33,3 @@ if(isset($posts) && !empty($posts)): ?>
 <?php else:
 echo '<p>No products found in this category</p>';
 endif;?>
-<dialog class="generalDialog" id="orderAdded"><!-- --></dialog>

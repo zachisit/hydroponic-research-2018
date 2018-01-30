@@ -42,5 +42,8 @@
 
 <!--Google Analytics-->
     <!--remove me and replace with client GA code-->
+
+
+<div class="generalDialog" id="orderAdded"><!-- --></div>
 </body>
 </html>
