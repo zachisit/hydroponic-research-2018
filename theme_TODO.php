@@ -8,3 +8,4 @@
 //@TODO:page edit scripts not saving
 //@TODO:create 'show related articles, etc' module block for pages
 //@TODO:create top banner to show if something in cart
+//@TODO;remove any errant console logs from js files

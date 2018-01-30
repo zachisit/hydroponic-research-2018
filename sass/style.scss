@@ -133,6 +133,22 @@ $pinterest_brand_color:#bd081c;
     }
   }
 }
+@mixin button_styling {
+  @include transition(800ms all ease);
+  color:white;
+  cursor:pointer;
+  background:black;
+  padding:0.3em 1em;
+  text-align:center;
+  border:none;
+  outline:none;
+  font-size:1em;
+
+  &:hover {
+    @include transition(800ms all ease);
+    background:purple;
+  }
+}
 @mixin font-open-sans {
   font-family:'Open Sans', sans-serif;
 }
@@ -285,6 +301,34 @@ a {
     font-weight:100;
     margin:0.5em 0;
     padding:0;
+  }
+
+  #user_action_buttons {
+    @include ul-no-list-style;
+
+    li {
+      @include ul-li-last-item-no-margin;
+      display:inline-block;
+      margin:0 0.5em 0 0;
+
+      .action_button {
+        border:0.04em solid black;
+        outline:none;
+        font-size:1.1em;
+        padding:0.2em 0.5em;
+        text-align:center;
+        cursor:pointer;
+
+        &.background-none {//@TODO:if needed more than once:move to global
+          background:white;
+        }
+
+        &.background-black {//@TODO:if needed more than once:move to global
+          background:black;
+          color:white;
+        }
+      }
+    }
   }
 }
 
@@ -447,6 +491,22 @@ header {
   }
 }
 
+//@TODO:these two may be removed after global dialog box added
+//@TODO:if not, move to applicable section
+#overlay {
+  position:fixed;
+  top:0;
+  left:0;
+  background:rgba(255,255,255,0.1);
+  z-index:5;
+  width:100%;
+  height:100%;
+  display:none;
+}
+.generalDialog {
+  z-index:999;
+}
+
 /*--------------------------------------------------------------
 # Cart Banner
 ---------------------------------------------------------------*/
@@ -455,6 +515,7 @@ header {
   width:100%;
   background:#ccc;
   padding:1em 0;
+  display:none;
 
   p {
     text-align:right;
@@ -991,7 +1052,7 @@ header {
       li {
         display:inline-block;
         margin:0 1em 4em 0;
-        width:30%;
+        width:32%;
 
         @include bp-small {
           width:100%;
@@ -1026,26 +1087,48 @@ header {
             .product_cost {
               color:green;
             }
+          }
+
+          .product_cart_options {
+            display:block;
+            height:100px;
+
+            label {
+              float:left;
+              width:100%;
+              text-align:center;
+              margin:0 0 0.11em 0;
+              font-weight:900;
+            }
 
             .weight_dropdown {
               display:block;
-              margin:0.8em 0;
               float:left;
               width:100%;
             }
-          }
 
-          .quantity {
-            margin:0 0 0.5em 0;
+            .qty_input {
+              width:100%;
+              float:left;
+              margin:0 0 0.5em 0;
 
-            .input-text {
-              width:50px;
+              input[type="number"] {
+                width:50px;
+              }
+            }
+
+            .shop_add_var_to_cart {
+              @include button_styling;
+              float:none;
+              width:auto;
+              margin:auto;
             }
           }
         }
 
         &:nth-child(3n+3) {
           margin:0;
+          float:right;
 
           @include bp-small {
             margin:0 1em 4em 0;
