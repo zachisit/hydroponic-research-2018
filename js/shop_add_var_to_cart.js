@@ -19,9 +19,7 @@ jQuery(document).ready(function($) {
             $productQty = $(this).closest('div').find('#quantity').val(),
             $dialog = document.getElementById('orderAdded');
 
-        if ($productVariationNumber) {
-            // console.log('product name: '+$productName+' and product id: '+$productID+' and product variation number: '+$productVariationNumber+' and the qty is: '+$productQty);
-
+        if ($productVariationNumber) {//has weight to select?
             if($productVariationNumber === 'Select Your Weight') {//is weight selected?
                 buildDialogBox($dialog, 'Uh, oh!', 'You need to specify a weight before adding to your Cart.', 0, 1);
             } else if ( !$productQty ) {//is qty specified?
@@ -31,8 +29,14 @@ jQuery(document).ready(function($) {
             } else {//all good - post product to cart
                 productPost(1, $productID, $productVariationNumber, $productName, $productQty);
             }
-        } else {//no weight variation, all good - post product to cart
-            productPost(0, $productID, $productVariationNumber, $productName, $productQty);
+        } else {
+            if ( !$productQty ) {//is qty specified?
+                buildDialogBox($dialog, 'Uh, oh!', 'You need to specify a quantity before adding to your Cart.', 0, 1);
+            } else if ($productQty < 0) {//is qty less than 0?
+                buildDialogBox($dialog, 'Uh, oh!', 'It is impossible to purchase negative of something!', 0, 1);
+            } else {//all good - post product to cart
+                productPost(0, $productID, $productVariationNumber, $productName, $productQty);
+            }
         }
     });
 
