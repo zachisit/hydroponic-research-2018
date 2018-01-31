@@ -534,3 +534,4 @@ function global_user_level_check( ){
         exit;
     }
 }
+add_action('wp_head', 'global_user_level_check');
