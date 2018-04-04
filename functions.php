@@ -7,13 +7,19 @@
 
 require_once 'shortcodes/sitemap.php';
 require_once 'shortcodes/products_by_cat.php';
-require_once 'shortcodes/user_profile.php';
+require_once 'shortcodes/user/user_profile.php';//@TODO:move to grow notes dir functions file
+require_once 'shortcodes/user/order_history.php';//@TODO:move to grow notes dir functions file
+require_once 'shortcodes/user/user_profile_edit.php';//@TODO:move to grow notes dir functions file
+require_once 'shortcodes/user/user_profile_sidebar.php';//@TODO:move to grow notes dir functions file
 require_once 'shortcodes/sales_assoc.php';
 require_once 'shortcodes/inbound_survey.php';
 require_once 'shortcodes/homepage_product_banner.php';
 require_once 'woocommerce/woocommerce_functions.php';
 require_once 'page_edit/page_scripts.php';
 require_once 'page_edit/page_show_sidebar.php';
+require_once 'grow-notes/functions.php';
+require_once 'theme-options.php';
+require_once 'post-type/faq.php';
 
 /**
  * Widgetize Theme
@@ -58,6 +64,8 @@ function hr_scripts()
     wp_enqueue_style( 'google_font_opensans', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
     wp_enqueue_style( 'slick_carousel_css', 'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css');
     wp_enqueue_style( 'slick_css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css' );
+    //@TODO:move into user_profile loading only
+    wp_enqueue_style('select_two_css', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css');
 
     //js
     wp_enqueue_script( 'preload_directory', get_template_directory_uri() . '/js/preload_directory.js',  time() );
@@ -70,6 +78,10 @@ function hr_scripts()
     wp_enqueue_script( 'pdf_css_icon_add', get_template_directory_uri() . '/js/pdf_css_icon_add.js', time() );
     wp_enqueue_script( 'slick_carousel_js', 'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', [], time(), true );
     wp_enqueue_script( 'slick_config', get_template_directory_uri() . '/js/slick_config.js', time() );
+    //@TODO:move into user_profile loading only
+    wp_enqueue_script('select_two_js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js');
+    wp_enqueue_script( 'select_two_js_trigger', get_template_directory_uri() . '/js/user/select_two.js', time() );
+    wp_enqueue_script( 'user_profile_specific', get_template_directory_uri() . '/js/user/user_profile_frontend.js',  time() );
 
     //localized
     wp_localize_script('preload_directory', 'ajax', [
@@ -110,6 +122,9 @@ function hr_admin_script()
 
     //scss
     wp_enqueue_style( get_template_directory_uri() . 'admin.scss' );
+
+    //js
+    wp_enqueue_script( 'admin_media_upload', get_template_directory_uri() . '/js/admin/admin_media_upload.js', time());
 }
 add_action( 'admin_enqueue_scripts', 'hr_admin_script');
 
@@ -478,11 +493,32 @@ function image_creator($image_url, $alt=false, $class=false) {
     return $string;
 }
 
+/**
+ * Output native WordPress WYSIWIG editor
+ *
+ * media_buttons and quicktags are set to true by default
+ *
+ * @param $helper_text
+ * @param $id
+ * @param bool $media_buttons
+ * @param bool $quicktags
+ * @return mixed
+ */
+function native_wysiwig_editor($helper_text, $id, $media_buttons = true, $quicktags = true) {
+    $content= get_post_meta( get_the_id(), $id, true );
+    $settings = ['media_buttons' => $media_buttons,'quicktags' => $quicktags, [
+        'textarea_name' => $id
+    ] ];
+    if( strlen( stripslashes($content)) == 0) $content = $helper_text;
+    $editor_id = $id;
+    $wywisig = wp_editor( $content, $editor_id, $settings );
+
+    return $wywisig;
+}
 
 /**
  * Create Sales Assoc user role
  */
-
 $result = add_role( 'sales-assoc', __('Sales Associate' ),
     [
         'read' => true, // true allows this capability
@@ -500,27 +536,29 @@ $result = add_role( 'sales-assoc', __('Sales Associate' ),
 );
 
 /**
- * Sales Associate Login Redirection
+ * Global User Login Redirection
  *
- * send 'sales-assoc' user role type to a
- * certain landing page
+ * user login redirection from /wp-admin
  *
  * @param $url
  * @param $request
  * @param $user
  * @return mixed
  */
-function my_login_redirect( $url, $request, $user ){
+function hr_login_redirect( $url, $request, $user ){
     if( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ) {
-        if( $user->has_cap( 'sales-assoc')) {
+        if( $user->has_cap('sales-assoc')) {
             $url = home_url('/sales-associate-login/');
         }
+        if ($user->has_cap( 'customer')) {
+            $url = home_url('/grow-notes/');
+        }
+        //else: super admin goes through normal login process to WP Dashboard
     }
 
     return $url;
 }
-add_filter('login_redirect', 'my_login_redirect', 10, 3 );
-
+add_filter('login_redirect', 'hr_login_redirect', 10, 3 );
 
 //@TODO:finish this out
 //check user role, if sales-assoc limit to just landing page
