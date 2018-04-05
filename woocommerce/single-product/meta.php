@@ -37,10 +37,10 @@ wrap it in an right class, update sass
             <div class="s_title"><h2>Overview</h2><div class="section_accordian_trigger"><i class="fa fa-chevron-down" aria-hidden="true"></i></div></div>
             <div class="section_container">
                 <div class="left">
-                    <?=image_creator('https://dummyimage.com/600x400/9c9c9c/fff.png&text=product+overview+image;', 'product overview image', null )?>
+                    <?=image_creator($product->product_lifestyle_image_url, 'product overview image', null )?>
                 </div>
                 <div class="right">
-                    <p>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit. Eos erant dolorum an. Per facer affert ut. Mei iisque mentitum moderatius cu. Sit munere facilis accusam eu dicat falli consulatu at vis. Te...</p>
+                    <p><?=$product->product_overview_text?></p>
                 </div>
                 <div class="top_action"><a href="#top_of_page" title="go to top" class="top_link">top</a></div>
             </div>
@@ -50,7 +50,7 @@ wrap it in an right class, update sass
             <div class="s_title"><h2>Product Selection</h2><div class="section_accordian_trigger"><i class="fa fa-chevron-down" aria-hidden="true"></i></div></div>
             <div class="section_container">
                 <div class="row">
-                    <?=image_creator('https://dummyimage.com/1400x400/9c9c9c/fff.png&text=product+selection+image;', 'product overview image', null )?>
+                    <?=image_creator($product->product_selection_image_url, 'product overview image', null )?>
                 </div>
                 <div class="top_action"><a href="#top_of_page" title="go to top" class="top_link">top</a></div>
             </div>
@@ -60,7 +60,7 @@ wrap it in an right class, update sass
             <div class="s_title"><h2>Technical Support</h2><div class="section_accordian_trigger"><i class="fa fa-chevron-down" aria-hidden="true"></i></div></div>
             <div class="section_container">
                 <div class="row">
-                    <?=image_creator('https://dummyimage.com/1400x400/9c9c9c/fff.png&text=technical+support+image;', 'product overview image', null )?>
+                    <?=getTechnicalSupportBanner() ?>
                 </div>
                 <div class="top_action"><a href="#top_of_page" title="go to top" class="top_link">top</a></div>
             </div>

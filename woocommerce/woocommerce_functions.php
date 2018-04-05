@@ -152,8 +152,15 @@ function custom_product_basic_load() {
 add_action( 'load-post.php' , 'custom_product_basic_load' );
 add_action( 'load-post-new.php' , 'custom_product_basic_load' );
 
-function custom_product_basic_metabox( $post ) {?>
-
+function custom_product_basic_metabox( $post ) {
+//    $string = populate_template_file('/metabox/product/product_metabox',
+//        [
+//                'post' => $post
+//        ]
+//    );
+//
+//    return $string;
+    ?>
     <input type="hidden" name="product_type" value="simple" />
 
     <section>
@@ -165,13 +172,12 @@ function custom_product_basic_metabox( $post ) {?>
         <div class="row">
             <label>Product Overview Lifestyle Image</label>
             <?php
-            $template_zzz_image_one_url = get_post_meta($postID, '_single_blog_post_template_zzz_image_one', true);
-            ?>
+            $product_lifestyle_image_url = get_post_meta($post->ID, '_product_lifestyle_image_url', true); ?>
             <fieldset class="max">
-            <input class="input_image" name="_single_blog_post_template_zzz_image_one" type="hidden" value="<?=$template_zzz_image_one_url;?>" style="width:400px;" />
-            <input class="input_button button" type="button" value="Upload Image" /><br/>
-            <img src="<?=$template_zzz_image_one_url;?>" style="width:200px;" class="img_src" />
-        </fieldset>
+                <input class="input_image" name="_product_lifestyle_image_url" type="hidden" value="<?=$product_lifestyle_image_url;?>" style="width:400px;" />
+                <input class="input_button button" type="button" value="Upload Image" /><br/>
+                <img src="<?=$product_lifestyle_image_url;?>" style="width:200px;" class="img_src" />
+            </fieldset>
         </div>
         <div class="row">
             <label>Overview Text</label>
@@ -182,13 +188,16 @@ function custom_product_basic_metabox( $post ) {?>
     <section>
         <h2>Product Selection</h2>
         <label>Product Selection Image</label>
+        <?php
+        $product_selection_image_url = get_post_meta($post->ID, '_product_selection_image_url', true); ?>
         <fieldset class="max">
-            <input class="input_image" name="_single_blog_post_template_zzz_image_one" type="hidden" value="<?=$template_zzz_image_one_url;?>" style="width:400px;" />
+            <input class="input_image" name="_product_selection_image_url" type="hidden" value="<?=$product_selection_image_url;?>" style="width:400px;" />
             <input class="input_button button" type="button" value="Upload Image" /><br/>
-            <img src="<?=$template_zzz_image_one_url;?>" style="width:200px;" class="img_src" />
+            <img src="<?=$product_selection_image_url;?>" style="width:200px;" class="img_src" />
         </fieldset>
     </section>
-<?php }
+<?php
+}
 
 /**
  * Save WC Meta Post
@@ -211,42 +220,15 @@ function custom_product_basic_save_post($post_id ,$post_after ) {
         return;
     }
 
-    //@TODO:change out overview items to include _overview_XXX
-    //@TODO swap this massive isset with foreach loop through meta values
-    //TODO:make sure all of these are actually active since i have rmeoved a lot of fields
-    if ( isset( $_POST['_product_video']) || isset($_POST['_lifestyle_photo_one'] ) || isset($_POST['_feature_one_headline']) || isset($_POST['_feature_one_subtitle']) || isset($_POST['_lifestyle_photo_two']) || isset($_POST['_lifestyle_photo_two_text_headline']) || (isset($_POST['_lifestyle_photo_two_text_subtitle'])) || isset($_POST['_lifestyle_photo_three']) || isset($_POST['_lifestyle_photo_three_text_headline']) || isset($_POST['_lifestyle_photo_three_text_subtitle']) || isset($_POST['_feature_four_headline']) || isset($_POST['_feature_four_subtitle']) || isset($_POST['_lifestyle_photo_four']) || isset($_POST['_lifestyle_photo_five']) || isset($_POST['_lifestyle_photo_five_text']) || isset($_POST['_intro_product_name']) || isset($_POST['_intro_product_description']) || isset($_POST['_intro_product_photo']) || isset($_POST['_specs_product_video']) || isset($_POST['_specs_in_box_video']) || isset($_POST['_support_manual']) || isset($_POST['_support_troubleshooting']) || isset($_POST['_support_setup'])|| isset($_POST['_product_faq_category']) || isset($_POST['_product_specs_audio_specs']) || isset($_POST['_c_a_b_product_one']) || isset($_POST['_c_a_b_product_two']) || isset($_POST['_c_a_b_product_three']) ||
-        (isset( $_POST['submit_image_selector'] ) && isset( $_POST['image_attachment_id'] ))
+    if (
+            isset($_POST['_product_lifestyle_image_url']) ||
+            isset($_POST['_product_quick_description'] ) ||
+            isset($_POST['_product_selection_image_url']) ||
+            isset($_POST['_product_overview_text'])
     ) {
-        update_post_meta( $post_id, '_product_video', $_POST['_product_video'] );
-        update_post_meta( $post_id, '_lifestyle_photo_one', $_POST['_lifestyle_photo_one'] );
-        update_post_meta( $post_id, '_feature_one_headline', $_POST['_feature_one_headline'] );
-        update_post_meta( $post_id, '_feature_one_subtitle', $_POST['_feature_one_subtitle'] );
-        update_post_meta( $post_id, '_lifestyle_photo_two', $_POST['_lifestyle_photo_two'] );
-        update_post_meta( $post_id, '_lifestyle_photo_two_text_headline', $_POST['_lifestyle_photo_two_text_headline']);
-        update_post_meta( $post_id, '_lifestyle_photo_two_text_subtitle', $_POST['_lifestyle_photo_two_text_subtitle']);
-        update_post_meta( $post_id, '_lifestyle_photo_three', $_POST['_lifestyle_photo_three']);
-        update_post_meta( $post_id, '_lifestyle_photo_three_text_headline', $_POST['_lifestyle_photo_three_text_headline']);
-        update_post_meta( $post_id, '_lifestyle_photo_three_text_subtitle', $_POST['_lifestyle_photo_three_text_subtitle']);
-        update_post_meta( $post_id, '_feature_four_headline', $_POST['_feature_four_headline']);
-        update_post_meta( $post_id, '_feature_four_subtitle', $_POST['_feature_four_subtitle']);
-        update_post_meta( $post_id, '_lifestyle_photo_four', $_POST['_lifestyle_photo_four']);
-        update_post_meta( $post_id, '_lifestyle_photo_five', $_POST['_lifestyle_photo_five']);
-        update_post_meta( $post_id, '_lifestyle_photo_five_text', $_POST['_lifestyle_photo_five_text']);
-        update_post_meta( $post_id, '_intro_product_name', $_POST['_intro_product_name']);
-        update_post_meta( $post_id, '_intro_product_description', $_POST['_intro_product_description']);
-        update_post_meta( $post_id, '_intro_product_photo', $_POST['_intro_product_photo']);
-        update_post_meta( $post_id, '_specs_product_video', $_POST['_specs_product_video']);
-        update_post_meta( $post_id, '_specs_in_box_video', $_POST['_specs_in_box_video']);
-        update_post_meta( $post_id, '_support_manual', $_POST['_support_manual']);
-        update_post_meta( $post_id, '_support_setup', $_POST['_support_setup']);
-        update_post_meta( $post_id, '_support_troubleshooting', $_POST['_support_troubleshooting']);
-        update_post_meta( $post_id, '_product_faq_category', $_POST['_product_faq_category']);
-        update_post_meta( $post_id, '_product_specs_audio_specs', $_POST['_product_specs_audio_specs']);
-        update_post_meta( $post_id, '_c_a_b_product_one', $_POST['_c_a_b_product_one']);
-        update_post_meta( $post_id, '_c_a_b_product_two', $_POST['_c_a_b_product_two']);
-        update_post_meta( $post_id, '_c_a_b_product_three', $_POST['_c_a_b_product_three']);
-
-        //test dropdown media
-        update_post_meta( $post_id, '_intro_product_photo_two', $_POST['_intro_product_photo_two']);
+        update_post_meta($post_id, '_product_lifestyle_image_url', $_POST['_product_lifestyle_image_url']);
+        update_post_meta($post_id, '_product_quick_description', $_POST['_product_quick_description']);
+        update_post_meta($post_id, '_product_selection_image_url', $_POST['_product_selection_image_url']);
+        update_post_meta($post_id, '_product_overview_text', $_POST['_product_overview_text']);
     }
 }
